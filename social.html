@@ -17,6 +17,7 @@
                         primary: { DEFAULT: "hsl(0 0% 98%)", foreground: "hsl(240 5.9% 10%)" },
                         secondary: { DEFAULT: "hsl(240 3.7% 15.9%)", foreground: "hsl(0 0% 98%)" },
                         muted: { DEFAULT: "hsl(240 3.7% 15.9%)", foreground: "hsl(240 5% 64.9%)" },
+                        charcoal: "hsl(240 6% 10%)",
                     },
                 }
             }
@@ -50,12 +51,10 @@
     </nav>
 
     <main class="max-w-3xl mx-auto px-4 py-8 space-y-6">
-        <div class="flex items-center gap-3">
-            <span class="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">5</span>
-            <div>
-                <h2 class="text-xl font-semibold">Social Media</h2>
-                <p class="text-sm text-muted-foreground">Profile setup + 2 months content</p>
-            </div>
+        <div class="text-center">
+            <span class="inline-flex w-12 h-12 rounded-full bg-primary text-primary-foreground items-center justify-center text-lg font-semibold mb-3">5</span>
+            <h2 class="text-xl font-semibold">Social Media</h2>
+            <p class="text-sm text-muted-foreground mt-1">Profile setup + 2 months content</p>
         </div>
 
         <!-- Stats -->
@@ -75,9 +74,9 @@
         </div>
 
         <!-- Platforms -->
-        <div class="rounded-lg border border-border">
-            <div class="p-4 border-b border-border">
-                <h3 class="font-medium">Platforms We Set Up</h3>
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">Platforms We Set Up</h3>
             </div>
             <div class="divide-y divide-border">
                 <div class="flex items-center gap-4 px-4 py-3">
@@ -112,9 +111,9 @@
         </div>
 
         <!-- Content -->
-        <div class="rounded-lg border border-border">
-            <div class="p-4 border-b border-border">
-                <h3 class="font-medium">2 Months of Content</h3>
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">2 Months of Content</h3>
             </div>
             <div class="divide-y divide-border text-sm">
                 <div class="flex justify-between px-4 py-3">
