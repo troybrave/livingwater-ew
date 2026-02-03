@@ -124,9 +124,58 @@
             border-color: rgba(138, 178, 178, 0.25);
         }
 
-        /* Flow connector */
-        .flow-line {
-            background: linear-gradient(90deg, rgba(95, 252, 192, 0.3), rgba(56, 154, 191, 0.3));
+        /* Animated flow line */
+        .flow-connector {
+            position: relative;
+            overflow: hidden;
+        }
+        .flow-connector::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(95, 252, 192, 0.6) 20%,
+                rgba(56, 154, 191, 0.8) 50%,
+                rgba(95, 252, 192, 0.6) 80%,
+                transparent 100%
+            );
+            background-size: 200% 100%;
+            animation: flow 2s ease-in-out infinite;
+        }
+        @keyframes flow {
+            0% { background-position: 100% 0; }
+            100% { background-position: -100% 0; }
+        }
+
+        /* Vertical flow for mobile */
+        .flow-connector-v {
+            position: relative;
+            overflow: hidden;
+        }
+        .flow-connector-v::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(95, 252, 192, 0.6) 20%,
+                rgba(56, 154, 191, 0.8) 50%,
+                rgba(95, 252, 192, 0.6) 80%,
+                transparent 100%
+            );
+            background-size: 100% 200%;
+            animation: flow-v 2s ease-in-out infinite;
+        }
+        @keyframes flow-v {
+            0% { background-position: 0 100%; }
+            100% { background-position: 0 -100%; }
         }
     </style>
 </head>
@@ -164,47 +213,102 @@
             <p class="text-sm text-muted-foreground mt-1">Your complete visual identity</p>
         </div>
 
-        <!-- 6 Tile Cards -->
+        <!-- 6 Tile Cards - Center Aligned -->
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <div class="glass-card rounded-xl p-5 transition-all">
+            <div class="glass-card rounded-xl p-5 transition-all text-center">
                 <h3 class="font-medium mb-1">Website</h3>
                 <p class="text-sm text-muted-foreground">Full business site</p>
             </div>
 
-            <div class="glass-card rounded-xl p-5 transition-all">
+            <div class="glass-card rounded-xl p-5 transition-all text-center">
                 <h3 class="font-medium mb-1">Landing Page</h3>
                 <p class="text-sm text-muted-foreground">Optimized for conversion</p>
             </div>
 
-            <div class="glass-card rounded-xl p-5 transition-all">
+            <div class="glass-card rounded-xl p-5 transition-all text-center">
                 <h3 class="font-medium mb-1">Sales Deck</h3>
                 <p class="text-sm text-muted-foreground">Branded presentation</p>
             </div>
 
-            <div class="glass-card rounded-xl p-5 transition-all">
+            <div class="glass-card rounded-xl p-5 transition-all text-center">
                 <h3 class="font-medium mb-1">Social Assets</h3>
                 <p class="text-sm text-muted-foreground">Banners & profiles</p>
             </div>
 
-            <div class="glass-card rounded-xl p-5 transition-all">
+            <div class="glass-card rounded-xl p-5 transition-all text-center">
                 <h3 class="font-medium mb-1">Logo + Typography</h3>
                 <p class="text-sm text-muted-foreground">Primary logo & fonts</p>
             </div>
 
-            <div class="glass-card rounded-xl p-5 transition-all">
+            <div class="glass-card rounded-xl p-5 transition-all text-center">
                 <h3 class="font-medium mb-1">Brand Guide</h3>
                 <p class="text-sm text-muted-foreground">Colors & usage rules</p>
             </div>
         </div>
 
-        <!-- Messaging Flow - Mobile Vertical / Desktop Horizontal -->
+        <!-- Messaging Flow -->
         <div class="glass-card rounded-xl overflow-hidden">
             <div class="bg-charcoal/50 py-4 border-b border-border">
                 <h3 class="font-medium text-center">Messaging Foundation</h3>
             </div>
             <div class="p-6 sm:p-8">
-                <!-- Vertical on mobile, horizontal on desktop -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-0">
+                <!-- Desktop: Horizontal -->
+                <div class="hidden sm:flex items-center justify-center">
+                    <!-- Pain -->
+                    <div class="flex flex-col items-center text-center w-20">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#389ABF] to-[#5FFCC0] flex items-center justify-center shadow-lg shadow-[#5FFCC0]/20">
+                            <span class="text-sm font-bold text-background">PAIN</span>
+                        </div>
+                        <p class="text-xs text-white/70 mt-3">What frustrates them</p>
+                    </div>
+
+                    <!-- Connector -->
+                    <div class="flow-connector h-[3px] w-12 rounded-full"></div>
+
+                    <!-- Stakes -->
+                    <div class="flex flex-col items-center text-center w-20">
+                        <div class="w-14 h-14 rounded-full border border-[#8AB2B2]/50 bg-secondary/50 flex items-center justify-center">
+                            <span class="text-xs font-medium">Stakes</span>
+                        </div>
+                        <p class="text-xs text-white/70 mt-3">Cost of inaction</p>
+                    </div>
+
+                    <!-- Connector -->
+                    <div class="flow-connector h-[3px] w-12 rounded-full"></div>
+
+                    <!-- Edge -->
+                    <div class="flex flex-col items-center text-center w-20">
+                        <div class="w-14 h-14 rounded-full border border-[#8AB2B2]/50 bg-secondary/50 flex items-center justify-center">
+                            <span class="text-xs font-medium">Edge</span>
+                        </div>
+                        <p class="text-xs text-white/70 mt-3">Why you win</p>
+                    </div>
+
+                    <!-- Connector -->
+                    <div class="flow-connector h-[3px] w-12 rounded-full"></div>
+
+                    <!-- Promise -->
+                    <div class="flex flex-col items-center text-center w-20">
+                        <div class="w-14 h-14 rounded-full border border-[#8AB2B2]/50 bg-secondary/50 flex items-center justify-center">
+                            <span class="text-xs font-medium">Promise</span>
+                        </div>
+                        <p class="text-xs text-white/70 mt-3">What you deliver</p>
+                    </div>
+
+                    <!-- Connector -->
+                    <div class="flow-connector h-[3px] w-12 rounded-full"></div>
+
+                    <!-- Result -->
+                    <div class="flex flex-col items-center text-center w-20">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#5FFCC0] to-[#389ABF] flex items-center justify-center shadow-lg shadow-[#5FFCC0]/20">
+                            <span class="text-sm font-bold text-background">RESULT</span>
+                        </div>
+                        <p class="text-xs text-white/70 mt-3">Transformation</p>
+                    </div>
+                </div>
+
+                <!-- Mobile: Vertical -->
+                <div class="flex sm:hidden flex-col items-center">
                     <!-- Pain -->
                     <div class="flex flex-col items-center text-center">
                         <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#389ABF] to-[#5FFCC0] flex items-center justify-center shadow-lg shadow-[#5FFCC0]/20">
@@ -213,41 +317,37 @@
                         <p class="text-xs text-white/70 mt-2">What frustrates them</p>
                     </div>
 
-                    <!-- Connector -->
-                    <div class="w-[2px] h-8 sm:w-8 sm:h-[2px] bg-gradient-to-b sm:bg-gradient-to-r from-[#5FFCC0]/50 to-[#389ABF]/30"></div>
+                    <div class="flow-connector-v w-[3px] h-8 rounded-full"></div>
 
                     <!-- Stakes -->
                     <div class="flex flex-col items-center text-center">
-                        <div class="w-14 h-14 rounded-full border border-[#8AB2B2]/40 bg-secondary/50 flex items-center justify-center">
+                        <div class="w-14 h-14 rounded-full border border-[#8AB2B2]/50 bg-secondary/50 flex items-center justify-center">
                             <span class="text-xs font-medium">Stakes</span>
                         </div>
                         <p class="text-xs text-white/70 mt-2">Cost of inaction</p>
                     </div>
 
-                    <!-- Connector -->
-                    <div class="w-[2px] h-8 sm:w-8 sm:h-[2px] bg-gradient-to-b sm:bg-gradient-to-r from-[#389ABF]/30 to-[#389ABF]/30"></div>
+                    <div class="flow-connector-v w-[3px] h-8 rounded-full"></div>
 
                     <!-- Edge -->
                     <div class="flex flex-col items-center text-center">
-                        <div class="w-14 h-14 rounded-full border border-[#8AB2B2]/40 bg-secondary/50 flex items-center justify-center">
+                        <div class="w-14 h-14 rounded-full border border-[#8AB2B2]/50 bg-secondary/50 flex items-center justify-center">
                             <span class="text-xs font-medium">Edge</span>
                         </div>
                         <p class="text-xs text-white/70 mt-2">Why you win</p>
                     </div>
 
-                    <!-- Connector -->
-                    <div class="w-[2px] h-8 sm:w-8 sm:h-[2px] bg-gradient-to-b sm:bg-gradient-to-r from-[#389ABF]/30 to-[#389ABF]/30"></div>
+                    <div class="flow-connector-v w-[3px] h-8 rounded-full"></div>
 
                     <!-- Promise -->
                     <div class="flex flex-col items-center text-center">
-                        <div class="w-14 h-14 rounded-full border border-[#8AB2B2]/40 bg-secondary/50 flex items-center justify-center">
+                        <div class="w-14 h-14 rounded-full border border-[#8AB2B2]/50 bg-secondary/50 flex items-center justify-center">
                             <span class="text-xs font-medium">Promise</span>
                         </div>
                         <p class="text-xs text-white/70 mt-2">What you deliver</p>
                     </div>
 
-                    <!-- Connector -->
-                    <div class="w-[2px] h-8 sm:w-8 sm:h-[2px] bg-gradient-to-b sm:bg-gradient-to-r from-[#389ABF]/30 to-[#5FFCC0]/50"></div>
+                    <div class="flow-connector-v w-[3px] h-8 rounded-full"></div>
 
                     <!-- Result -->
                     <div class="flex flex-col items-center text-center">
@@ -266,9 +366,9 @@
                 <h3 class="font-medium text-center">Positioning Statement</h3>
             </div>
             <div class="p-6">
-                <blockquote class="text-base text-[#5FFCC0] text-center leading-relaxed font-medium">
-                    "[Company] is a [category] for [target users] that [core benefit]. Unlike [competitor], we [key differentiator]."
-                </blockquote>
+                <p class="text-base text-[#5FFCC0] text-center leading-relaxed font-medium">
+                    "[Company] is a [category] for [target audience] that [key benefit]. Unlike [alternative], we [differentiator]."
+                </p>
             </div>
         </div>
 
