@@ -4,81 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Production | 60-Day Marketing System</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .pill-scroll::-webkit-scrollbar { display: none; }
+        .pill-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>60-Day Water Filtration Marketing System</h1>
-        <p class="subtitle">Brevard County, FL - Melbourne Area</p>
-        <span class="goal">Goal: 10-20 Qualified Leads Per Week</span>
+<body class="bg-slate-900 text-white min-h-screen">
+    <header class="bg-gradient-to-b from-slate-800 to-slate-900 px-4 py-6 text-center">
+        <h1 class="text-xl md:text-2xl font-bold">60-Day Marketing System</h1>
+        <p class="text-slate-400 mt-1 text-sm">Brevard County Water Filtration</p>
     </header>
 
-    <nav class="pill-nav">
-        <div class="pill-container">
-            <a href="index.html" class="pill">Overview</a>
-            <a href="branding.html" class="pill">Branding</a>
-            <a href="video.html" class="pill active">Video</a>
-            <a href="crm.html" class="pill">CRM</a>
-            <a href="ai-agents.html" class="pill">AI Agents</a>
-            <a href="social-media.html" class="pill">Social Media</a>
-            <a href="maintenance.html" class="pill">Maintenance</a>
-            <a href="ad-spend.html" class="pill">Ad Spend</a>
-            <a href="timeline.html" class="pill">Timeline</a>
-            <a href="kpis.html" class="pill">KPIs</a>
+    <nav class="sticky top-0 z-50 bg-slate-800/95 backdrop-blur border-b border-slate-700">
+        <div class="pill-scroll overflow-x-auto px-4 py-3">
+            <div class="flex gap-2 min-w-max">
+                <a href="index.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">Overview</a>
+                <a href="branding.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">Branding</a>
+                <a href="video.html" class="px-4 py-2 rounded-full text-sm font-medium bg-blue-600 text-white">Video</a>
+                <a href="crm.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">CRM</a>
+                <a href="ai-agents.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">AI Agents</a>
+                <a href="social.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">Social</a>
+                <a href="costs.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">Costs</a>
+                <a href="timeline.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">Timeline</a>
+            </div>
         </div>
     </nav>
 
-    <main class="container">
-        <section>
-            <h2><span class="package-num">2</span> Video Production & Asset Creation</h2>
+    <main class="max-w-2xl mx-auto px-4 py-6 space-y-6">
+        <!-- Page Header -->
+        <div class="flex items-center gap-3">
+            <span class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold">2</span>
+            <div>
+                <h2 class="text-xl font-bold">Video Production</h2>
+                <p class="text-slate-400 text-sm">Professional content that converts</p>
+            </div>
+        </div>
 
-            <h3>Deliverables</h3>
-            <table>
-                <tr><th>Item</th><th>Details</th></tr>
-                <tr><td><strong>12 Professional Creatives</strong></td><td>Viral, entertaining, engaging, educational content</td></tr>
-                <tr><td><strong>Multi-Platform Formatting</strong></td><td>Meta (feed, stories, reels), YouTube, website</td></tr>
-                <tr><td><strong>Post-Production</strong></td><td>Editing, color grading, motion graphics, music</td></tr>
-                <tr><td><strong>Creative Refresh Variations</strong></td><td>Included in monthly maintenance</td></tr>
-            </table>
-
-            <h3>Creative Strategy</h3>
-            <table>
-                <tr><th>Campaign Type</th><th>Creative Focus</th><th>Goal</th></tr>
-                <tr><td><strong>Interest/Awareness</strong></td><td>Educational, entertaining, scroll-stopping</td><td>Build audience, engagement</td></tr>
-                <tr><td><strong>Lead Conversion</strong></td><td>Problem-aware, offer-focused, urgency</td><td>Capture lead info</td></tr>
-            </table>
-
-            <h3>Every Video Must Have</h3>
-            <ul>
-                <li><strong>Hook</strong> - First 3 seconds stop the scroll (question, stat, visual surprise)</li>
-                <li><strong>Pattern interrupts</strong> - Cut, zoom, or scene change every 2-3 seconds</li>
-                <li><strong>Captions</strong> - Burned-in text (85%+ watch muted)</li>
-                <li><strong>One idea</strong> - Single clear message per video</li>
-                <li><strong>CTA</strong> - Clear next step in final seconds</li>
-            </ul>
-
-            <h3>Video Types</h3>
-            <table>
-                <tr><th>Type</th><th>Purpose</th></tr>
-                <tr><td><strong>Problem/Solution</strong></td><td>Water test reveals, before/after demos</td></tr>
-                <tr><td><strong>Social Proof</strong></td><td>Customer testimonials, results</td></tr>
-                <tr><td><strong>Educational</strong></td><td>Tips, facts, "did you know"</td></tr>
-                <tr><td><strong>Entertaining</strong></td><td>Fun, funny, satisfying reveals</td></tr>
-                <tr><td><strong>Direct Offer</strong></td><td>Free water test CTA, urgency</td></tr>
-            </table>
-
-            <div class="nav-hint">
-                <a href="branding.html" class="prev">Branding</a>
-                <a href="crm.html" class="next">CRM & Automation</a>
+        <!-- What You Get -->
+        <section class="bg-gradient-to-br from-blue-900/50 to-slate-800 rounded-2xl p-5 border border-blue-800/50">
+            <h3 class="font-semibold mb-4">What You Get</h3>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-blue-400">12</p>
+                    <p class="text-sm text-slate-400">Pro creatives</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-bold text-blue-400">4</p>
+                    <p class="text-sm text-slate-400">Platforms</p>
+                </div>
             </div>
         </section>
+
+        <!-- Deliverables -->
+        <section class="bg-slate-800 rounded-2xl p-5 border border-slate-700">
+            <h3 class="font-semibold text-blue-400 mb-4">Deliverables</h3>
+            <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                    <span class="text-green-400 mt-1">✓</span>
+                    <div>
+                        <p class="font-medium">12 Professional Videos</p>
+                        <p class="text-slate-400 text-sm">Viral, entertaining, educational content</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-green-400 mt-1">✓</span>
+                    <div>
+                        <p class="font-medium">Multi-Platform Formatting</p>
+                        <p class="text-slate-400 text-sm">Meta feed, stories, reels, YouTube, website</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-green-400 mt-1">✓</span>
+                    <div>
+                        <p class="font-medium">Full Post-Production</p>
+                        <p class="text-slate-400 text-sm">Editing, color, motion graphics, music</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-green-400 mt-1">✓</span>
+                    <div>
+                        <p class="font-medium">Creative Refresh</p>
+                        <p class="text-slate-400 text-sm">New variations in monthly maintenance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Requirements -->
+        <section class="bg-slate-800 rounded-2xl p-5 border border-slate-700">
+            <h3 class="font-semibold text-blue-400 mb-4">Every Video Has</h3>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="bg-slate-700/50 rounded-lg p-3 text-center">
+                    <p class="text-2xl mb-1">🎯</p>
+                    <p class="text-sm font-medium">3-sec Hook</p>
+                    <p class="text-xs text-slate-400">Stop the scroll</p>
+                </div>
+                <div class="bg-slate-700/50 rounded-lg p-3 text-center">
+                    <p class="text-2xl mb-1">⚡</p>
+                    <p class="text-sm font-medium">Pattern Interrupts</p>
+                    <p class="text-xs text-slate-400">Every 2-3 seconds</p>
+                </div>
+                <div class="bg-slate-700/50 rounded-lg p-3 text-center">
+                    <p class="text-2xl mb-1">📝</p>
+                    <p class="text-sm font-medium">Captions</p>
+                    <p class="text-xs text-slate-400">85% watch muted</p>
+                </div>
+                <div class="bg-slate-700/50 rounded-lg p-3 text-center">
+                    <p class="text-2xl mb-1">👆</p>
+                    <p class="text-sm font-medium">Clear CTA</p>
+                    <p class="text-xs text-slate-400">One action</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Types -->
+        <section class="bg-slate-800 rounded-2xl p-5 border border-slate-700">
+            <h3 class="font-semibold text-blue-400 mb-4">Video Types</h3>
+            <div class="space-y-2">
+                <div class="flex justify-between items-center py-2 border-b border-slate-700">
+                    <span class="font-medium">Problem/Solution</span>
+                    <span class="text-slate-400 text-sm">Water test reveals</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-slate-700">
+                    <span class="font-medium">Social Proof</span>
+                    <span class="text-slate-400 text-sm">Testimonials</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-slate-700">
+                    <span class="font-medium">Educational</span>
+                    <span class="text-slate-400 text-sm">Tips & facts</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-slate-700">
+                    <span class="font-medium">Entertaining</span>
+                    <span class="text-slate-400 text-sm">Satisfying reveals</span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                    <span class="font-medium">Direct Offer</span>
+                    <span class="text-slate-400 text-sm">Free water test CTA</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="flex justify-between pt-4">
+            <a href="branding.html" class="text-slate-400 hover:text-white text-sm">← Branding</a>
+            <a href="crm.html" class="text-blue-400 hover:text-blue-300 text-sm">CRM →</a>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Endless Winning Agency. All rights reserved.</p>
+    <footer class="text-center py-8 text-slate-500 text-sm border-t border-slate-800">
+        <p>© 2026 Endless Winning Agency</p>
     </footer>
 </body>
 </html>
