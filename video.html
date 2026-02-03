@@ -26,6 +26,31 @@
     <style>
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .nav-scroll {
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 0 16px;
+        }
+        .nav-scroll > a { scroll-snap-align: center; }
+        .nav-container { position: relative; }
+        .nav-container::before,
+        .nav-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 24px;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .nav-container::before {
+            left: 0;
+            background: linear-gradient(to right, hsl(240 10% 3.9%), transparent);
+        }
+        .nav-container::after {
+            right: 0;
+            background: linear-gradient(to left, hsl(240 10% 3.9%), transparent);
+        }
     </style>
 </head>
 <body class="bg-background text-foreground min-h-screen antialiased">
@@ -36,32 +61,16 @@
     </header>
 
     <nav class="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
-        <div class="max-w-3xl mx-auto px-4 py-3">
-            <div class="flex justify-center sm:hidden">
-                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center gap-2 rounded-md bg-secondary px-4 py-2 text-sm font-medium">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                    Menu
-                </button>
-            </div>
-            <div id="mobile-menu" class="hidden sm:hidden mt-3 grid grid-cols-2 gap-2">
-                <a href="index.html" class="inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Overview</a>
-                <a href="branding.html" class="inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Branding</a>
-                <a href="video.html" class="inline-flex items-center justify-center rounded-md bg-secondary text-secondary-foreground px-3 py-2 text-sm font-medium ring-1 ring-inset ring-white/10">Video</a>
-                <a href="crm.html" class="inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">CRM</a>
-                <a href="ai.html" class="inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">AI</a>
-                <a href="social.html" class="inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Social</a>
-                <a href="costs.html" class="inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Costs</a>
-                <a href="timeline.html" class="inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Timeline</a>
-            </div>
-            <div class="hidden sm:flex sm:flex-wrap sm:justify-center sm:gap-1">
-                <a href="index.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Overview</a>
-                <a href="branding.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Branding</a>
-                <a href="video.html" class="inline-flex items-center justify-center rounded-md bg-secondary text-secondary-foreground px-3 py-1.5 text-sm font-medium ring-1 ring-inset ring-white/10">Video</a>
-                <a href="crm.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">CRM</a>
-                <a href="ai.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">AI</a>
-                <a href="social.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Social</a>
-                <a href="costs.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Costs</a>
-                <a href="timeline.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Timeline</a>
+        <div class="nav-container max-w-3xl mx-auto">
+            <div class="nav-scroll no-scrollbar overflow-x-auto flex gap-1 px-4 py-3">
+                <a href="index.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Overview</a>
+                <a href="branding.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Branding</a>
+                <a href="video.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md bg-secondary text-secondary-foreground px-3 py-1.5 text-sm font-medium ring-1 ring-inset ring-white/10">Video</a>
+                <a href="crm.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">CRM</a>
+                <a href="ai.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">AI</a>
+                <a href="social.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Social</a>
+                <a href="costs.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Costs</a>
+                <a href="timeline.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Timeline</a>
             </div>
         </div>
     </nav>
