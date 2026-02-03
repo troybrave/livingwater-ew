@@ -17,6 +17,7 @@
                         primary: { DEFAULT: "hsl(0 0% 98%)", foreground: "hsl(240 5.9% 10%)" },
                         secondary: { DEFAULT: "hsl(240 3.7% 15.9%)", foreground: "hsl(0 0% 98%)" },
                         muted: { DEFAULT: "hsl(240 3.7% 15.9%)", foreground: "hsl(240 5% 64.9%)" },
+                        charcoal: "hsl(240 6% 10%)",
                     },
                 }
             }
@@ -50,18 +51,16 @@
     </nav>
 
     <main class="max-w-3xl mx-auto px-4 py-8 space-y-6">
-        <div class="flex items-center gap-3">
-            <span class="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">$</span>
-            <div>
-                <h2 class="text-xl font-semibold">Investment & Costs</h2>
-                <p class="text-sm text-muted-foreground">Complete pricing breakdown</p>
-            </div>
+        <div class="text-center">
+            <span class="inline-flex w-12 h-12 rounded-full bg-primary text-primary-foreground items-center justify-center text-lg font-semibold mb-3">$</span>
+            <h2 class="text-xl font-semibold">Investment & Costs</h2>
+            <p class="text-sm text-muted-foreground mt-1">Complete pricing breakdown</p>
         </div>
 
         <!-- Main Investment -->
-        <div class="rounded-lg border border-border">
-            <div class="p-4 border-b border-border">
-                <h3 class="font-medium">Your Investment</h3>
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">Your Investment</h3>
             </div>
             <div class="divide-y divide-border">
                 <div class="flex justify-between items-center px-4 py-4">
@@ -82,22 +81,26 @@
         </div>
 
         <!-- Maintenance Includes -->
-        <div class="rounded-lg border border-border p-4">
-            <h3 class="font-medium mb-3">Monthly Maintenance Includes</h3>
-            <div class="grid grid-cols-2 gap-2 text-sm">
-                <div class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Campaign management</div>
-                <div class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Weekly reporting</div>
-                <div class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> CRM maintenance</div>
-                <div class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> AI monitoring</div>
-                <div class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Creative refresh</div>
-                <div class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> ROI tracking</div>
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">Monthly Maintenance Includes</h3>
+            </div>
+            <div class="p-4">
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Campaign management</div>
+                    <div class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Weekly reporting</div>
+                    <div class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> CRM maintenance</div>
+                    <div class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> AI monitoring</div>
+                    <div class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Creative refresh</div>
+                    <div class="flex items-center gap-2"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> ROI tracking</div>
+                </div>
             </div>
         </div>
 
         <!-- Platform Fees -->
-        <div class="rounded-lg border border-border">
-            <div class="p-4 border-b border-border">
-                <h3 class="font-medium">Platform Fees (You Pay)</h3>
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">Platform Fees (You Pay)</h3>
             </div>
             <div class="divide-y divide-border text-sm">
                 <div class="flex justify-between px-4 py-3">
@@ -125,9 +128,9 @@
         </div>
 
         <!-- Ad Spend -->
-        <div class="rounded-lg border border-border">
-            <div class="p-4 border-b border-border">
-                <h3 class="font-medium">Recommended Ad Spend</h3>
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">Recommended Ad Spend</h3>
             </div>
             <div class="grid grid-cols-2 gap-3 p-4">
                 <div class="rounded-md bg-secondary p-3 text-center">
@@ -156,16 +159,20 @@
         </div>
 
         <!-- Expected ROI -->
-        <div class="rounded-lg border border-border p-4">
-            <h3 class="font-medium mb-4">Expected Results</h3>
-            <div class="grid grid-cols-2 gap-4">
-                <div>
-                    <p class="text-2xl font-semibold">$30-50</p>
-                    <p class="text-sm text-muted-foreground">CPL (optimized)</p>
-                </div>
-                <div>
-                    <p class="text-2xl font-semibold">25-40</p>
-                    <p class="text-sm text-muted-foreground">Leads/week</p>
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">Expected Results</h3>
+            </div>
+            <div class="p-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-2xl font-semibold">$30-50</p>
+                        <p class="text-sm text-muted-foreground">CPL (optimized)</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-semibold">25-40</p>
+                        <p class="text-sm text-muted-foreground">Leads/week</p>
+                    </div>
                 </div>
             </div>
         </div>
