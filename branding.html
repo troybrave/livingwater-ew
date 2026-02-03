@@ -121,17 +121,7 @@
             border: 1px solid rgba(138, 178, 178, 0.1);
         }
         .glass-card:hover {
-            border-color: rgba(138, 178, 178, 0.2);
-        }
-
-        /* Messaging pillar rings */
-        .pillar-ring {
-            border: 1px solid rgba(138, 178, 178, 0.2);
-            background: linear-gradient(135deg, rgba(56, 154, 191, 0.05) 0%, transparent 100%);
-        }
-        .pillar-ring:hover {
-            border-color: rgba(95, 252, 192, 0.3);
-            background: linear-gradient(135deg, rgba(56, 154, 191, 0.1) 0%, transparent 100%);
+            border-color: rgba(138, 178, 178, 0.25);
         }
     </style>
 </head>
@@ -166,114 +156,45 @@
         <div class="text-center">
             <span class="inline-flex w-12 h-12 rounded-full bg-primary text-primary-foreground items-center justify-center text-lg font-semibold mb-3">1</span>
             <h2 class="text-xl font-semibold">Branding & Positioning</h2>
-            <p class="text-sm text-muted-foreground mt-1">Visual identity & market position</p>
+            <p class="text-sm text-muted-foreground mt-1">Your complete visual identity</p>
         </div>
 
-        <!-- What We Create - Clean List -->
-        <div class="rounded-lg border border-border overflow-hidden glass-card">
-            <div class="bg-charcoal/50 py-4 border-b border-border">
-                <h3 class="font-medium text-center">What We Create</h3>
+        <!-- 4 Tile Cards -->
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Website + Landing Pages -->
+            <div class="glass-card rounded-xl p-6 transition-all">
+                <h3 class="font-medium mb-2">Website + Landing Pages</h3>
+                <p class="text-sm text-muted-foreground">Full business site and optimized conversion pages</p>
             </div>
-            <div class="p-6">
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
-                            <span class="text-sm">Logo design + variants</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
-                            <span class="text-sm">Color palette</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
-                            <span class="text-sm">Typography system</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
-                            <span class="text-sm">Branded sales deck</span>
-                        </div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
-                            <span class="text-sm">Landing page</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
-                            <span class="text-sm">Full website</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
-                            <span class="text-sm">Social media assets</span>
-                        </div>
-                    </div>
-                </div>
+
+            <!-- Sales Deck + Social Assets -->
+            <div class="glass-card rounded-xl p-6 transition-all">
+                <h3 class="font-medium mb-2">Sales Deck + Social Assets</h3>
+                <p class="text-sm text-muted-foreground">Branded presentations and profile materials</p>
+            </div>
+
+            <!-- Logo Design + Typography -->
+            <div class="glass-card rounded-xl p-6 transition-all">
+                <h3 class="font-medium mb-2">Logo Design + Typography</h3>
+                <p class="text-sm text-muted-foreground">Primary logo, variants, and font system</p>
+            </div>
+
+            <!-- Color Palette + Brand Guide -->
+            <div class="glass-card rounded-xl p-6 transition-all">
+                <h3 class="font-medium mb-2">Color Palette + Brand Guide</h3>
+                <p class="text-sm text-muted-foreground">Complete color system and usage guidelines</p>
             </div>
         </div>
 
         <!-- Positioning Statement -->
-        <div class="rounded-lg border border-border overflow-hidden glass-card">
+        <div class="glass-card rounded-xl overflow-hidden">
             <div class="bg-charcoal/50 py-4 border-b border-border">
                 <h3 class="font-medium text-center">Positioning Statement</h3>
             </div>
             <div class="p-6">
                 <blockquote class="text-sm text-muted-foreground italic text-center leading-relaxed">
-                    "[Company] is a [category] for [target users] that [core benefit]. Unlike [competitor], we [key differentiator]."
+                    "Living Water is a plumbing company for Phoenix homeowners that delivers reliable, same-day service. Unlike typical contractors, we combine old-school craftsmanship with modern communication."
                 </blockquote>
-            </div>
-        </div>
-
-        <!-- Messaging Foundation - Concentric Ripples -->
-        <div class="rounded-lg border border-border overflow-hidden glass-card">
-            <div class="bg-charcoal/50 py-4 border-b border-border">
-                <h3 class="font-medium text-center">Messaging Foundation</h3>
-                <p class="text-xs text-muted-foreground text-center mt-1">The core messages that define your brand</p>
-            </div>
-            <div class="p-6 sm:p-8">
-                <!-- Concentric circles radiating from center -->
-                <div class="relative flex items-center justify-center" style="min-height: 340px;">
-                    <!-- Outer ring - Outcome -->
-                    <div class="absolute w-[320px] h-[320px] sm:w-[340px] sm:h-[340px] rounded-full pillar-ring flex items-start justify-center pt-4 transition-all">
-                        <div class="text-center">
-                            <p class="text-xs sm:text-sm font-medium text-[#5FFCC0]">Outcome</p>
-                            <p class="text-[10px] sm:text-xs text-muted-foreground">The transformation</p>
-                        </div>
-                    </div>
-
-                    <!-- Ring 4 - Solution Promise -->
-                    <div class="absolute w-[250px] h-[250px] sm:w-[270px] sm:h-[270px] rounded-full pillar-ring flex items-start justify-center pt-4 transition-all">
-                        <div class="text-center">
-                            <p class="text-xs sm:text-sm font-medium">Solution Promise</p>
-                            <p class="text-[10px] sm:text-xs text-muted-foreground">What you deliver</p>
-                        </div>
-                    </div>
-
-                    <!-- Ring 3 - Competitive Edge -->
-                    <div class="absolute w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] rounded-full pillar-ring flex items-start justify-center pt-3 transition-all">
-                        <div class="text-center">
-                            <p class="text-xs font-medium">Competitive Edge</p>
-                            <p class="text-[10px] text-muted-foreground">Why you</p>
-                        </div>
-                    </div>
-
-                    <!-- Ring 2 - Cost of Inaction -->
-                    <div class="absolute w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] rounded-full pillar-ring flex items-start justify-center pt-2 transition-all">
-                        <div class="text-center px-1">
-                            <p class="text-[10px] sm:text-xs font-medium">Stakes</p>
-                        </div>
-                    </div>
-
-                    <!-- Center - Pain Point (the drop that creates ripples) -->
-                    <div class="absolute w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] rounded-full bg-gradient-to-br from-[#389ABF] to-[#5FFCC0] flex items-center justify-center shadow-lg shadow-[#5FFCC0]/20">
-                        <p class="text-[9px] sm:text-[10px] font-bold text-background text-center leading-tight">PAIN</p>
-                    </div>
-                </div>
-
-                <!-- Key insight -->
-                <div class="mt-6 text-center">
-                    <p class="text-xs text-muted-foreground italic">Your message starts from the customer's pain and ripples outward to transformation</p>
-                </div>
             </div>
         </div>
 
