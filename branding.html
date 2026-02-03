@@ -55,7 +55,7 @@
             right: 0;
             background: linear-gradient(to left, hsl(220 20% 6%), transparent);
         }
-    
+
         /* Ambient glow */
         .ambient-glow {
             position: fixed;
@@ -123,9 +123,24 @@
         .glass-card:hover {
             border-color: rgba(138, 178, 178, 0.2);
         }
+
+        /* Messaging pillar rings */
+        .pillar-ring {
+            border: 1px solid rgba(138, 178, 178, 0.2);
+            background: linear-gradient(135deg, rgba(56, 154, 191, 0.05) 0%, transparent 100%);
+        }
+        .pillar-ring:hover {
+            border-color: rgba(95, 252, 192, 0.3);
+            background: linear-gradient(135deg, rgba(56, 154, 191, 0.1) 0%, transparent 100%);
+        }
     </style>
 </head>
 <body class="bg-background text-foreground min-h-screen antialiased relative">
+    <!-- Ambient Effects -->
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-2"></div>
+    <div class="ripple-container" id="rippleContainer"></div>
+
     <header class="border-b border-border relative z-10">
         <div class="max-w-3xl mx-auto px-4 py-6 text-center">
             <h1 class="text-xl font-semibold tracking-tight">60-Day Marketing System</h1>
@@ -146,7 +161,7 @@
         </div>
     </nav>
 
-    <main class="max-w-3xl mx-auto px-4 py-8 space-y-6 relative z-10">
+    <main class="max-w-3xl mx-auto px-4 py-8 space-y-8 relative z-10">
         <!-- Header -->
         <div class="text-center">
             <span class="inline-flex w-12 h-12 rounded-full bg-primary text-primary-foreground items-center justify-center text-lg font-semibold mb-3">1</span>
@@ -154,202 +169,110 @@
             <p class="text-sm text-muted-foreground mt-1">Visual identity & market position</p>
         </div>
 
-        <!-- Visual Identity -->
-        <div>
-            <h3 class="font-medium text-center mb-4">Visual Identity</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                <!-- Logo Design -->
-                <div class="rounded-lg border border-border bg-charcoal p-4 text-center hover:border-white/20 transition-colors">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-lg bg-secondary flex items-center justify-center">
-                        <svg class="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                        </svg>
+        <!-- What We Create - Clean List -->
+        <div class="rounded-lg border border-border overflow-hidden glass-card">
+            <div class="bg-charcoal/50 py-4 border-b border-border">
+                <h3 class="font-medium text-center">What We Create</h3>
+            </div>
+            <div class="p-6">
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
+                            <span class="text-sm">Logo design + variants</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
+                            <span class="text-sm">Color palette</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
+                            <span class="text-sm">Typography system</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
+                            <span class="text-sm">Branded sales deck</span>
+                        </div>
                     </div>
-                    <p class="text-sm font-medium">Logo Design</p>
-                    <p class="text-xs text-muted-foreground mt-1">Primary + icon + variants</p>
-                </div>
-
-                <!-- Color Palette -->
-                <div class="rounded-lg border border-border bg-charcoal p-4 text-center hover:border-white/20 transition-colors">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-lg bg-secondary flex items-center justify-center">
-                        <svg class="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
-                        </svg>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
+                            <span class="text-sm">Landing page</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
+                            <span class="text-sm">Full website</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-[#5FFCC0]"></div>
+                            <span class="text-sm">Social media assets</span>
+                        </div>
                     </div>
-                    <p class="text-sm font-medium">Color Palette</p>
-                    <p class="text-xs text-muted-foreground mt-1">Primary, secondary, accent</p>
-                </div>
-
-                <!-- Typography -->
-                <div class="rounded-lg border border-border bg-charcoal p-4 text-center hover:border-white/20 transition-colors">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-lg bg-secondary flex items-center justify-center">
-                        <svg class="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h8m-8 6h16"/>
-                        </svg>
-                    </div>
-                    <p class="text-sm font-medium">Typography</p>
-                    <p class="text-xs text-muted-foreground mt-1">Headline + body fonts</p>
-                </div>
-
-                <!-- Sales Deck -->
-                <div class="rounded-lg border border-border bg-charcoal p-4 text-center hover:border-white/20 transition-colors">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-lg bg-secondary flex items-center justify-center">
-                        <svg class="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
-                        </svg>
-                    </div>
-                    <p class="text-sm font-medium">Sales Deck</p>
-                    <p class="text-xs text-muted-foreground mt-1">Branded + payment links</p>
-                </div>
-
-                <!-- Landing Page -->
-                <div class="rounded-lg border border-border bg-charcoal p-4 text-center hover:border-white/20 transition-colors">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-lg bg-secondary flex items-center justify-center">
-                        <svg class="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <p class="text-sm font-medium">Landing Page</p>
-                    <p class="text-xs text-muted-foreground mt-1">Mobile-first, optimized</p>
-                </div>
-
-                <!-- Website -->
-                <div class="rounded-lg border border-border bg-charcoal p-4 text-center hover:border-white/20 transition-colors">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-lg bg-secondary flex items-center justify-center">
-                        <svg class="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
-                        </svg>
-                    </div>
-                    <p class="text-sm font-medium">Website</p>
-                    <p class="text-xs text-muted-foreground mt-1">Full business site</p>
-                </div>
-
-                <!-- Social Assets -->
-                <div class="rounded-lg border border-border bg-charcoal p-4 text-center hover:border-white/20 transition-colors sm:col-start-2">
-                    <div class="w-10 h-10 mx-auto mb-3 rounded-lg bg-secondary flex items-center justify-center">
-                        <svg class="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
-                        </svg>
-                    </div>
-                    <p class="text-sm font-medium">Social Assets</p>
-                    <p class="text-xs text-muted-foreground mt-1">Banners, avatars, covers</p>
                 </div>
             </div>
         </div>
 
         <!-- Positioning Statement -->
-        <div class="rounded-lg border border-border overflow-hidden">
-            <div class="bg-charcoal py-4">
+        <div class="rounded-lg border border-border overflow-hidden glass-card">
+            <div class="bg-charcoal/50 py-4 border-b border-border">
                 <h3 class="font-medium text-center">Positioning Statement</h3>
             </div>
-            <div class="p-4">
-                <blockquote class="text-sm text-muted-foreground italic text-center">
+            <div class="p-6">
+                <blockquote class="text-sm text-muted-foreground italic text-center leading-relaxed">
                     "[Company] is a [category] for [target users] that [core benefit]. Unlike [competitor], we [key differentiator]."
                 </blockquote>
             </div>
         </div>
 
-        <!-- Messaging Pillars - Structural Design -->
-        <div class="rounded-lg border border-border overflow-hidden">
-            <div class="bg-charcoal py-4">
-                <h3 class="font-medium text-center">Messaging Pillars</h3>
+        <!-- Messaging Foundation - Concentric Ripples -->
+        <div class="rounded-lg border border-border overflow-hidden glass-card">
+            <div class="bg-charcoal/50 py-4 border-b border-border">
+                <h3 class="font-medium text-center">Messaging Foundation</h3>
+                <p class="text-xs text-muted-foreground text-center mt-1">The core messages that define your brand</p>
             </div>
-            <div class="p-6">
-                <!-- The Brand (supported by pillars) -->
-                <div class="relative">
-                    <!-- Roof/Entablature -->
-                    <div class="bg-gradient-to-b from-white/20 to-white/5 rounded-t-lg border border-white/20 border-b-0 p-4 text-center mb-0">
-                        <p class="text-lg font-bold tracking-wide">YOUR BRAND</p>
-                        <p class="text-xs text-muted-foreground">Supported by these core messages</p>
-                    </div>
-
-                    <!-- Architrave (beam across pillars) -->
-                    <div class="h-2 bg-gradient-to-b from-white/15 to-white/5 border-x border-white/20"></div>
-
-                    <!-- The 5 Pillars -->
-                    <div class="grid grid-cols-5 gap-1">
-                        <!-- Pillar 1 -->
-                        <div class="flex flex-col items-center">
-                            <div class="w-full h-2 bg-gradient-to-b from-white/10 to-transparent rounded-t-sm"></div>
-                            <div class="w-3/4 bg-gradient-to-b from-secondary via-charcoal to-secondary border-x border-white/10 flex-1 min-h-[120px] flex items-center justify-center">
-                                <div class="transform -rotate-90 whitespace-nowrap">
-                                    <p class="text-[10px] sm:text-xs font-medium">Pain Points</p>
-                                </div>
-                            </div>
-                            <div class="w-full h-3 bg-gradient-to-t from-white/10 to-transparent rounded-b-sm"></div>
-                        </div>
-
-                        <!-- Pillar 2 -->
-                        <div class="flex flex-col items-center">
-                            <div class="w-full h-2 bg-gradient-to-b from-white/10 to-transparent rounded-t-sm"></div>
-                            <div class="w-3/4 bg-gradient-to-b from-secondary via-charcoal to-secondary border-x border-white/10 flex-1 min-h-[120px] flex items-center justify-center">
-                                <div class="transform -rotate-90 whitespace-nowrap">
-                                    <p class="text-[10px] sm:text-xs font-medium">Cost of Inaction</p>
-                                </div>
-                            </div>
-                            <div class="w-full h-3 bg-gradient-to-t from-white/10 to-transparent rounded-b-sm"></div>
-                        </div>
-
-                        <!-- Pillar 3 -->
-                        <div class="flex flex-col items-center">
-                            <div class="w-full h-2 bg-gradient-to-b from-white/10 to-transparent rounded-t-sm"></div>
-                            <div class="w-3/4 bg-gradient-to-b from-secondary via-charcoal to-secondary border-x border-white/10 flex-1 min-h-[120px] flex items-center justify-center">
-                                <div class="transform -rotate-90 whitespace-nowrap">
-                                    <p class="text-[10px] sm:text-xs font-medium">Competitive Edge</p>
-                                </div>
-                            </div>
-                            <div class="w-full h-3 bg-gradient-to-t from-white/10 to-transparent rounded-b-sm"></div>
-                        </div>
-
-                        <!-- Pillar 4 -->
-                        <div class="flex flex-col items-center">
-                            <div class="w-full h-2 bg-gradient-to-b from-white/10 to-transparent rounded-t-sm"></div>
-                            <div class="w-3/4 bg-gradient-to-b from-secondary via-charcoal to-secondary border-x border-white/10 flex-1 min-h-[120px] flex items-center justify-center">
-                                <div class="transform -rotate-90 whitespace-nowrap">
-                                    <p class="text-[10px] sm:text-xs font-medium">Solution Promise</p>
-                                </div>
-                            </div>
-                            <div class="w-full h-3 bg-gradient-to-t from-white/10 to-transparent rounded-b-sm"></div>
-                        </div>
-
-                        <!-- Pillar 5 -->
-                        <div class="flex flex-col items-center">
-                            <div class="w-full h-2 bg-gradient-to-b from-white/10 to-transparent rounded-t-sm"></div>
-                            <div class="w-3/4 bg-gradient-to-b from-secondary via-charcoal to-secondary border-x border-white/10 flex-1 min-h-[120px] flex items-center justify-center">
-                                <div class="transform -rotate-90 whitespace-nowrap">
-                                    <p class="text-[10px] sm:text-xs font-medium">Outcome</p>
-                                </div>
-                            </div>
-                            <div class="w-full h-3 bg-gradient-to-t from-white/10 to-transparent rounded-b-sm"></div>
+            <div class="p-6 sm:p-8">
+                <!-- Concentric circles radiating from center -->
+                <div class="relative flex items-center justify-center" style="min-height: 340px;">
+                    <!-- Outer ring - Outcome -->
+                    <div class="absolute w-[320px] h-[320px] sm:w-[340px] sm:h-[340px] rounded-full pillar-ring flex items-start justify-center pt-4 transition-all">
+                        <div class="text-center">
+                            <p class="text-xs sm:text-sm font-medium text-[#5FFCC0]">Outcome</p>
+                            <p class="text-[10px] sm:text-xs text-muted-foreground">The transformation</p>
                         </div>
                     </div>
 
-                    <!-- Foundation -->
-                    <div class="h-3 bg-gradient-to-t from-white/15 to-white/5 border border-white/20 border-t-0 rounded-b-lg"></div>
+                    <!-- Ring 4 - Solution Promise -->
+                    <div class="absolute w-[250px] h-[250px] sm:w-[270px] sm:h-[270px] rounded-full pillar-ring flex items-start justify-center pt-4 transition-all">
+                        <div class="text-center">
+                            <p class="text-xs sm:text-sm font-medium">Solution Promise</p>
+                            <p class="text-[10px] sm:text-xs text-muted-foreground">What you deliver</p>
+                        </div>
+                    </div>
+
+                    <!-- Ring 3 - Competitive Edge -->
+                    <div class="absolute w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] rounded-full pillar-ring flex items-start justify-center pt-3 transition-all">
+                        <div class="text-center">
+                            <p class="text-xs font-medium">Competitive Edge</p>
+                            <p class="text-[10px] text-muted-foreground">Why you</p>
+                        </div>
+                    </div>
+
+                    <!-- Ring 2 - Cost of Inaction -->
+                    <div class="absolute w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] rounded-full pillar-ring flex items-start justify-center pt-2 transition-all">
+                        <div class="text-center px-1">
+                            <p class="text-[10px] sm:text-xs font-medium">Stakes</p>
+                        </div>
+                    </div>
+
+                    <!-- Center - Pain Point (the drop that creates ripples) -->
+                    <div class="absolute w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] rounded-full bg-gradient-to-br from-[#389ABF] to-[#5FFCC0] flex items-center justify-center shadow-lg shadow-[#5FFCC0]/20">
+                        <p class="text-[9px] sm:text-[10px] font-bold text-background text-center leading-tight">PAIN</p>
+                    </div>
                 </div>
 
-                <!-- Legend below the structure -->
-                <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                    <div class="flex items-start gap-2 text-muted-foreground">
-                        <span class="font-medium text-foreground shrink-0">Pain Points:</span>
-                        <span>What frustrates your customer?</span>
-                    </div>
-                    <div class="flex items-start gap-2 text-muted-foreground">
-                        <span class="font-medium text-foreground shrink-0">Cost of Inaction:</span>
-                        <span>What happens if they do nothing?</span>
-                    </div>
-                    <div class="flex items-start gap-2 text-muted-foreground">
-                        <span class="font-medium text-foreground shrink-0">Competitive Edge:</span>
-                        <span>Why you vs. alternatives?</span>
-                    </div>
-                    <div class="flex items-start gap-2 text-muted-foreground">
-                        <span class="font-medium text-foreground shrink-0">Solution Promise:</span>
-                        <span>What do you deliver?</span>
-                    </div>
-                    <div class="flex items-start gap-2 text-muted-foreground sm:col-span-2 sm:justify-center">
-                        <span class="font-medium text-foreground shrink-0">Outcome:</span>
-                        <span>What transformation do they experience?</span>
-                    </div>
+                <!-- Key insight -->
+                <div class="mt-6 text-center">
+                    <p class="text-xs text-muted-foreground italic">Your message starts from the customer's pain and ripples outward to transformation</p>
                 </div>
             </div>
         </div>
