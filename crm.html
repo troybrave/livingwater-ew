@@ -17,6 +17,7 @@
                         primary: { DEFAULT: "hsl(0 0% 98%)", foreground: "hsl(240 5.9% 10%)" },
                         secondary: { DEFAULT: "hsl(240 3.7% 15.9%)", foreground: "hsl(0 0% 98%)" },
                         muted: { DEFAULT: "hsl(240 3.7% 15.9%)", foreground: "hsl(240 5% 64.9%)" },
+                        charcoal: "hsl(240 6% 10%)",
                     },
                 }
             }
@@ -50,18 +51,16 @@
     </nav>
 
     <main class="max-w-3xl mx-auto px-4 py-8 space-y-6">
-        <div class="flex items-center gap-3">
-            <span class="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">3</span>
-            <div>
-                <h2 class="text-xl font-semibold">CRM & Automation</h2>
-                <p class="text-sm text-muted-foreground">Your sales machine, systematized</p>
-            </div>
+        <div class="text-center">
+            <span class="inline-flex w-12 h-12 rounded-full bg-primary text-primary-foreground items-center justify-center text-lg font-semibold mb-3">3</span>
+            <h2 class="text-xl font-semibold">CRM & Automation</h2>
+            <p class="text-sm text-muted-foreground mt-1">Your sales machine, systematized</p>
         </div>
 
         <!-- What We Build -->
-        <div class="rounded-lg border border-border">
-            <div class="p-4 border-b border-border">
-                <h3 class="font-medium">What We Build</h3>
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">What We Build</h3>
             </div>
             <div class="p-4 space-y-3">
                 <div class="flex items-start gap-3">
@@ -103,9 +102,9 @@
         </div>
 
         <!-- Integrations -->
-        <div class="rounded-lg border border-border">
-            <div class="p-4 border-b border-border">
-                <h3 class="font-medium">Integrations</h3>
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">Integrations</h3>
             </div>
             <div class="grid grid-cols-2 gap-3 p-4">
                 <div class="rounded-md bg-secondary p-3">
@@ -128,14 +127,18 @@
         </div>
 
         <!-- Collaborative Design -->
-        <div class="rounded-lg border border-border p-4">
-            <h3 class="font-medium mb-3">We Design Together</h3>
-            <p class="text-sm text-muted-foreground mb-3">You handle selling. We handle the system.</p>
-            <div class="space-y-2 text-sm">
-                <p class="flex items-center gap-2"><span class="text-muted-foreground">→</span> What messaging hits at each stage</p>
-                <p class="flex items-center gap-2"><span class="text-muted-foreground">→</span> When AI hands off to human</p>
-                <p class="flex items-center gap-2"><span class="text-muted-foreground">→</span> What "qualified" actually means</p>
-                <p class="flex items-center gap-2"><span class="text-muted-foreground">→</span> Success metrics we both track</p>
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">We Design Together</h3>
+            </div>
+            <div class="p-4">
+                <p class="text-sm text-muted-foreground mb-3">You handle selling. We handle the system.</p>
+                <div class="space-y-2 text-sm">
+                    <p class="flex items-center gap-2"><span class="text-muted-foreground">→</span> What messaging hits at each stage</p>
+                    <p class="flex items-center gap-2"><span class="text-muted-foreground">→</span> When AI hands off to human</p>
+                    <p class="flex items-center gap-2"><span class="text-muted-foreground">→</span> What "qualified" actually means</p>
+                    <p class="flex items-center gap-2"><span class="text-muted-foreground">→</span> Success metrics we both track</p>
+                </div>
             </div>
         </div>
 
