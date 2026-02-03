@@ -123,6 +123,11 @@
         .glass-card:hover {
             border-color: rgba(138, 178, 178, 0.25);
         }
+
+        /* Flow connector */
+        .flow-line {
+            background: linear-gradient(90deg, rgba(95, 252, 192, 0.3), rgba(56, 154, 191, 0.3));
+        }
     </style>
 </head>
 <body class="bg-background text-foreground min-h-screen antialiased relative">
@@ -161,28 +166,87 @@
 
         <!-- 4 Tile Cards -->
         <div class="grid grid-cols-2 gap-4">
-            <!-- Website + Landing Pages -->
             <div class="glass-card rounded-xl p-6 transition-all">
                 <h3 class="font-medium mb-2">Website + Landing Pages</h3>
                 <p class="text-sm text-muted-foreground">Full business site and optimized conversion pages</p>
             </div>
 
-            <!-- Sales Deck + Social Assets -->
             <div class="glass-card rounded-xl p-6 transition-all">
                 <h3 class="font-medium mb-2">Sales Deck + Social Assets</h3>
                 <p class="text-sm text-muted-foreground">Branded presentations and profile materials</p>
             </div>
 
-            <!-- Logo Design + Typography -->
             <div class="glass-card rounded-xl p-6 transition-all">
                 <h3 class="font-medium mb-2">Logo Design + Typography</h3>
                 <p class="text-sm text-muted-foreground">Primary logo, variants, and font system</p>
             </div>
 
-            <!-- Color Palette + Brand Guide -->
             <div class="glass-card rounded-xl p-6 transition-all">
                 <h3 class="font-medium mb-2">Color Palette + Brand Guide</h3>
                 <p class="text-sm text-muted-foreground">Complete color system and usage guidelines</p>
+            </div>
+        </div>
+
+        <!-- Messaging Flow - Horizontal -->
+        <div class="glass-card rounded-xl overflow-hidden">
+            <div class="bg-charcoal/50 py-4 border-b border-border">
+                <h3 class="font-medium text-center">Messaging Foundation</h3>
+            </div>
+            <div class="p-6 overflow-x-auto">
+                <!-- Horizontal flow -->
+                <div class="flex items-center justify-between min-w-[500px] gap-2">
+                    <!-- Pain -->
+                    <div class="flex flex-col items-center text-center flex-shrink-0">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#389ABF] to-[#5FFCC0] flex items-center justify-center shadow-lg shadow-[#5FFCC0]/20">
+                            <span class="text-xs font-bold text-background">PAIN</span>
+                        </div>
+                        <p class="text-[10px] text-muted-foreground mt-2 max-w-[60px]">What frustrates them</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flex-1 h-[2px] flow-line"></div>
+
+                    <!-- Stakes -->
+                    <div class="flex flex-col items-center text-center flex-shrink-0">
+                        <div class="w-12 h-12 rounded-full border border-[#8AB2B2]/30 bg-secondary/50 flex items-center justify-center">
+                            <span class="text-[10px] font-medium">Stakes</span>
+                        </div>
+                        <p class="text-[10px] text-muted-foreground mt-2 max-w-[60px]">Cost of inaction</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flex-1 h-[2px] flow-line"></div>
+
+                    <!-- Edge -->
+                    <div class="flex flex-col items-center text-center flex-shrink-0">
+                        <div class="w-12 h-12 rounded-full border border-[#8AB2B2]/30 bg-secondary/50 flex items-center justify-center">
+                            <span class="text-[10px] font-medium">Edge</span>
+                        </div>
+                        <p class="text-[10px] text-muted-foreground mt-2 max-w-[60px]">Why you win</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flex-1 h-[2px] flow-line"></div>
+
+                    <!-- Promise -->
+                    <div class="flex flex-col items-center text-center flex-shrink-0">
+                        <div class="w-12 h-12 rounded-full border border-[#8AB2B2]/30 bg-secondary/50 flex items-center justify-center">
+                            <span class="text-[10px] font-medium">Promise</span>
+                        </div>
+                        <p class="text-[10px] text-muted-foreground mt-2 max-w-[60px]">What you deliver</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flex-1 h-[2px] flow-line"></div>
+
+                    <!-- Outcome -->
+                    <div class="flex flex-col items-center text-center flex-shrink-0">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#5FFCC0] to-[#389ABF] flex items-center justify-center shadow-lg shadow-[#5FFCC0]/20">
+                            <span class="text-[10px] font-bold text-background">RESULT</span>
+                        </div>
+                        <p class="text-[10px] text-muted-foreground mt-2 max-w-[60px]">Transformation</p>
+                    </div>
+                </div>
             </div>
         </div>
 
