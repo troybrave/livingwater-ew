@@ -17,6 +17,7 @@
                         primary: { DEFAULT: "hsl(0 0% 98%)", foreground: "hsl(240 5.9% 10%)" },
                         secondary: { DEFAULT: "hsl(240 3.7% 15.9%)", foreground: "hsl(0 0% 98%)" },
                         muted: { DEFAULT: "hsl(240 3.7% 15.9%)", foreground: "hsl(240 5% 64.9%)" },
+                        charcoal: "hsl(240 6% 10%)",
                     },
                 }
             }
@@ -50,19 +51,17 @@
     </nav>
 
     <main class="max-w-3xl mx-auto px-4 py-8 space-y-6">
-        <div class="flex items-center gap-3">
-            <span class="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">📅</span>
-            <div>
-                <h2 class="text-xl font-semibold">60-Day Timeline</h2>
-                <p class="text-sm text-muted-foreground">From kickoff to leads flowing</p>
-            </div>
+        <div class="text-center">
+            <span class="inline-flex w-12 h-12 rounded-full bg-primary text-primary-foreground items-center justify-center text-lg font-semibold mb-3">📅</span>
+            <h2 class="text-xl font-semibold">60-Day Timeline</h2>
+            <p class="text-sm text-muted-foreground mt-1">From kickoff to leads flowing</p>
         </div>
 
         <!-- Phase 1 -->
         <div class="rounded-lg border border-border overflow-hidden">
             <div class="bg-primary text-primary-foreground px-4 py-3">
-                <p class="font-medium">Phase 1: Foundation</p>
-                <p class="text-sm opacity-80">Weeks 1-2</p>
+                <p class="font-medium text-center">Phase 1: Foundation</p>
+                <p class="text-sm opacity-80 text-center">Weeks 1-2</p>
             </div>
             <div class="p-4 space-y-3 text-sm">
                 <div>
@@ -84,8 +83,8 @@
         <!-- Phase 2 -->
         <div class="rounded-lg border border-border overflow-hidden">
             <div class="bg-primary text-primary-foreground px-4 py-3">
-                <p class="font-medium">Phase 2: Build & Test</p>
-                <p class="text-sm opacity-80">Weeks 3-4</p>
+                <p class="font-medium text-center">Phase 2: Build & Test</p>
+                <p class="text-sm opacity-80 text-center">Weeks 3-4</p>
             </div>
             <div class="p-4 space-y-3 text-sm">
                 <div>
@@ -97,16 +96,16 @@
                     <p>Final creatives, integration testing, campaigns built</p>
                 </div>
                 <div class="rounded-md bg-green-950/50 border border-green-900/50 p-3 text-center mt-3">
-                    <p class="text-green-400 font-medium">🚀 LAUNCH — Ads live, leads start flowing</p>
+                    <p class="text-green-400 font-medium">LAUNCH — Ads live, leads start flowing</p>
                 </div>
             </div>
         </div>
 
         <!-- Phase 3 -->
         <div class="rounded-lg border border-border overflow-hidden">
-            <div class="bg-secondary px-4 py-3">
-                <p class="font-medium">Phase 3: Optimize</p>
-                <p class="text-sm text-muted-foreground">Weeks 5-6</p>
+            <div class="bg-charcoal px-4 py-3">
+                <p class="font-medium text-center">Phase 3: Optimize</p>
+                <p class="text-sm text-muted-foreground text-center">Weeks 5-6</p>
             </div>
             <div class="p-4 space-y-3 text-sm">
                 <div>
@@ -126,9 +125,9 @@
 
         <!-- Phase 4 -->
         <div class="rounded-lg border border-border overflow-hidden">
-            <div class="bg-secondary px-4 py-3">
-                <p class="font-medium">Phase 4: Handoff</p>
-                <p class="text-sm text-muted-foreground">Weeks 7-8</p>
+            <div class="bg-charcoal px-4 py-3">
+                <p class="font-medium text-center">Phase 4: Handoff</p>
+                <p class="text-sm text-muted-foreground text-center">Weeks 7-8</p>
             </div>
             <div class="p-4 space-y-3 text-sm">
                 <div>
@@ -140,15 +139,15 @@
                     <p>Documentation, transition to maintenance</p>
                 </div>
                 <div class="rounded-md bg-blue-950/50 border border-blue-900/50 p-3 text-center mt-3">
-                    <p class="text-blue-400 font-medium">✅ System Operational — Maintenance phase begins</p>
+                    <p class="text-blue-400 font-medium">System Operational — Maintenance phase begins</p>
                 </div>
             </div>
         </div>
 
         <!-- KPIs -->
-        <div class="rounded-lg border border-border">
-            <div class="p-4 border-b border-border">
-                <h3 class="font-medium">Success Metrics</h3>
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">Success Metrics</h3>
             </div>
             <div class="divide-y divide-border text-sm">
                 <div class="flex justify-between px-4 py-3">
