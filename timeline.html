@@ -61,31 +61,20 @@
             position: relative;
             padding-left: 2rem;
         }
-
-        /* The main flowing line */
         .timeline-line {
             position: absolute;
             left: 0.75rem;
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(180deg,
-                hsl(240 3.7% 25.9%) 0%,
-                hsl(142 76% 36%) 25%,
-                hsl(142 76% 36%) 50%,
-                hsl(217 91% 60%) 75%,
-                hsl(240 3.7% 25.9%) 100%
-            );
+            background: linear-gradient(180deg, hsl(240 3.7% 25.9%) 0%, #5FFCC0 25%, #5FFCC0 50%, hsl(187 50% 45%) 75%, hsl(240 3.7% 25.9%) 100%);
             background-size: 100% 200%;
             animation: flowLine 4s ease-in-out infinite;
         }
-
         @keyframes flowLine {
             0%, 100% { background-position: 0% 0%; }
             50% { background-position: 0% 100%; }
         }
-
-        /* Flowing particles on the line */
         .timeline-line::before {
             content: '';
             position: absolute;
@@ -93,29 +82,22 @@
             left: -3px;
             width: 8px;
             height: 8px;
-            background: hsl(142 76% 50%);
+            background: #5FFCC0;
             border-radius: 50%;
-            box-shadow: 0 0 10px hsl(142 76% 50%), 0 0 20px hsl(142 76% 50%);
+            box-shadow: 0 0 10px #5FFCC0, 0 0 20px #5FFCC0;
             animation: particleFlow 6s ease-in-out infinite;
         }
-
         @keyframes particleFlow {
             0% { top: 0%; opacity: 0; }
             10% { opacity: 1; }
             90% { opacity: 1; }
             100% { top: 100%; opacity: 0; }
         }
-
-        /* Timeline nodes */
         .timeline-node {
             position: relative;
             padding-bottom: 2rem;
         }
-
-        .timeline-node:last-child {
-            padding-bottom: 0;
-        }
-
+        .timeline-node:last-child { padding-bottom: 0; }
         .node-marker {
             position: absolute;
             left: -2rem;
@@ -128,71 +110,39 @@
             justify-content: center;
             font-size: 0.75rem;
             font-weight: 600;
-            transition: all 0.3s ease;
             z-index: 10;
         }
-
         .node-marker.active {
-            background: hsl(142 76% 36%);
-            color: white;
-            box-shadow: 0 0 0 4px hsla(142, 76%, 36%, 0.2);
-            animation: pulse 2s ease-in-out infinite;
+            background: #5FFCC0;
+            color: hsl(220 20% 8%);
+            box-shadow: 0 0 0 4px rgba(95, 252, 192, 0.2);
         }
-
         .node-marker.upcoming {
-            background: hsl(217 91% 60%);
+            background: hsl(187 50% 45%);
             color: white;
         }
-
-        .node-marker.complete {
-            background: hsl(240 3.7% 25.9%);
-            color: hsl(240 5% 64.9%);
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 0 0 4px hsla(142, 76%, 36%, 0.2);
-                transform: scale(1);
-            }
-            50% {
-                box-shadow: 0 0 0 8px hsla(142, 76%, 36%, 0.1), 0 0 20px hsla(142, 76%, 36%, 0.3);
-                transform: scale(1.05);
-            }
-        }
-
-        /* Node content cards */
         .node-card {
             background: hsl(240 6% 10%);
             border: 1px solid hsl(240 3.7% 15.9%);
             border-radius: 0.5rem;
             padding: 1rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
         }
-
         .node-card:hover {
             transform: translateX(4px);
             border-color: hsl(240 3.7% 25.9%);
-            box-shadow: -4px 0 0 hsl(142 76% 36%);
+            box-shadow: -4px 0 0 #5FFCC0;
         }
-
         .node-card.active {
-            border-color: hsl(142 76% 36%);
-            box-shadow: -4px 0 0 hsl(142 76% 36%), 0 0 20px hsla(142, 76%, 36%, 0.1);
+            border-color: #5FFCC0;
+            box-shadow: -4px 0 0 #5FFCC0, 0 0 20px rgba(95, 252, 192, 0.1);
         }
-
-        /* Week badges */
         .week-badge {
             display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
             padding: 0.25rem 0.5rem;
             border-radius: 9999px;
             font-size: 0.75rem;
             font-weight: 500;
         }
-
-        /* Milestone markers */
         .milestone {
             display: flex;
             align-items: center;
@@ -203,20 +153,16 @@
             font-weight: 500;
             margin-top: 0.75rem;
         }
-
         .milestone.launch {
-            background: hsla(142, 76%, 36%, 0.15);
-            border: 1px solid hsla(142, 76%, 36%, 0.3);
-            color: hsl(142 76% 50%);
+            background: rgba(95, 252, 192, 0.15);
+            border: 1px solid rgba(95, 252, 192, 0.3);
+            color: #5FFCC0;
         }
-
         .milestone.handoff {
-            background: hsla(217, 91%, 60%, 0.15);
-            border: 1px solid hsla(217, 91%, 60%, 0.3);
-            color: hsl(217 91% 70%);
+            background: rgba(56, 154, 191, 0.15);
+            border: 1px solid rgba(56, 154, 191, 0.3);
+            color: hsl(187 50% 60%);
         }
-
-        /* Task list items */
         .task-item {
             display: flex;
             align-items: flex-start;
@@ -225,39 +171,25 @@
             font-size: 0.875rem;
             color: hsl(240 5% 64.9%);
         }
-
         .task-item::before {
             content: '→';
             color: hsl(240 3.7% 35.9%);
-            flex-shrink: 0;
         }
-
-        /* Progress indicator */
         .progress-bar {
             position: relative;
             height: 4px;
             background: hsl(240 3.7% 15.9%);
             border-radius: 2px;
             overflow: hidden;
-            margin-top: 1rem;
         }
-
         .progress-fill {
             position: absolute;
             left: 0;
             top: 0;
             height: 100%;
-            background: linear-gradient(90deg, hsl(142 76% 36%), hsl(217 91% 60%));
+            background: linear-gradient(90deg, #5FFCC0, hsl(187 50% 45%));
             border-radius: 2px;
-            animation: progressPulse 2s ease-in-out infinite;
         }
-
-        @keyframes progressPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        /* Deliverable tags */
         .deliverable-tag {
             display: inline-flex;
             padding: 0.25rem 0.5rem;
@@ -269,21 +201,18 @@
             margin-right: 0.25rem;
             margin-bottom: 0.25rem;
         }
-
-        /* KPI Grid */
         .kpi-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 0.75rem;
         }
-
         .kpi-item {
             text-align: center;
             padding: 0.75rem;
             background: hsl(240 3.7% 12.9%);
             border-radius: 0.375rem;
         }
-    
+
         /* Ambient glow */
         .ambient-glow {
             position: fixed;
@@ -325,20 +254,8 @@
             opacity: 0;
         }
         @keyframes ripple-expand {
-            0% {
-                width: 0;
-                height: 0;
-                opacity: 0.6;
-                border-width: 2px;
-            }
-            100% {
-                width: 300px;
-                height: 300px;
-                opacity: 0;
-                border-width: 1px;
-                margin-left: -150px;
-                margin-top: -150px;
-            }
+            0% { width: 0; height: 0; opacity: 0.6; border-width: 2px; }
+            100% { width: 300px; height: 300px; opacity: 0; border-width: 1px; margin-left: -150px; margin-top: -150px; }
         }
 
         /* Glass card effect */
@@ -348,12 +265,14 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(138, 178, 178, 0.1);
         }
-        .glass-card:hover {
-            border-color: rgba(138, 178, 178, 0.2);
-        }
     </style>
 </head>
 <body class="bg-background text-foreground min-h-screen antialiased relative">
+    <!-- Ambient Effects -->
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-2"></div>
+    <div class="ripple-container" id="rippleContainer"></div>
+
     <header class="border-b border-border relative z-10">
         <div class="max-w-3xl mx-auto px-4 py-6 text-center">
             <h1 class="text-xl font-semibold tracking-tight">60-Day Marketing System</h1>
@@ -370,21 +289,12 @@
                 <a href="ai.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">AI</a>
                 <a href="social.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Social</a>
                 <a href="ads.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Ads</a>
+                <a href="timeline.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md bg-secondary text-secondary-foreground px-3 py-1.5 text-sm font-medium ring-1 ring-inset ring-white/10">Timeline</a>
             </div>
         </div>
     </nav>
 
     <main class="max-w-3xl mx-auto px-4 py-8 relative z-10">
-        <!-- Investment / Timeline Toggle -->
-        <div class="flex justify-center gap-2 mb-8">
-            <a href="investment.html" class="inline-flex items-center justify-center rounded-full border border-border text-muted-foreground px-6 py-2 text-sm font-medium hover:bg-secondary transition-colors">
-                Investment
-            </a>
-            <a href="timeline.html" class="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-2 text-sm font-semibold">
-                Timeline
-            </a>
-        </div>
-
         <!-- Header -->
         <div class="text-center mb-8">
             <h2 class="text-2xl font-semibold">Your 60-Day Journey</h2>
@@ -414,7 +324,6 @@
                         <h3 class="font-semibold text-lg">Foundation</h3>
                         <span class="week-badge bg-green-950 text-[#5FFCC0] border border-green-900">Weeks 1-2</span>
                     </div>
-
                     <div class="space-y-1 mb-3">
                         <div class="task-item">Branding kickoff & discovery</div>
                         <div class="task-item">Video shoot scheduled & captured</div>
@@ -422,7 +331,6 @@
                         <div class="task-item">Social profiles created</div>
                         <div class="task-item">A2P & 10DLC registration started</div>
                     </div>
-
                     <div class="flex flex-wrap">
                         <span class="deliverable-tag">Brand assets</span>
                         <span class="deliverable-tag">Profiles live</span>
@@ -439,7 +347,6 @@
                         <h3 class="font-semibold text-lg">Build & Test</h3>
                         <span class="week-badge bg-green-950 text-[#5FFCC0] border border-green-900">Weeks 3-4</span>
                     </div>
-
                     <div class="space-y-1 mb-3">
                         <div class="task-item">Video post-production complete</div>
                         <div class="task-item">AI voice & messaging bots live</div>
@@ -447,7 +354,6 @@
                         <div class="task-item">Campaign builds in Meta & Google</div>
                         <div class="task-item">Integration testing</div>
                     </div>
-
                     <div class="milestone launch">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                         <span>LAUNCH — Ads live, leads start flowing</span>
@@ -463,7 +369,6 @@
                         <h3 class="font-semibold text-lg">Optimize</h3>
                         <span class="week-badge bg-blue-950 text-blue-400 border border-blue-900">Weeks 5-6</span>
                     </div>
-
                     <div class="space-y-1 mb-3">
                         <div class="task-item">Audience testing & refinement</div>
                         <div class="task-item">Creative A/B testing</div>
@@ -471,7 +376,6 @@
                         <div class="task-item">Month 2 content execution</div>
                         <div class="task-item">CPL optimization</div>
                     </div>
-
                     <div class="flex flex-wrap">
                         <span class="deliverable-tag">Campaigns optimized</span>
                         <span class="deliverable-tag">CPL improving</span>
@@ -487,14 +391,12 @@
                         <h3 class="font-semibold text-lg">Handoff</h3>
                         <span class="week-badge bg-blue-950 text-blue-400 border border-blue-900">Weeks 7-8</span>
                     </div>
-
                     <div class="space-y-1 mb-3">
                         <div class="task-item">Performance review</div>
                         <div class="task-item">Client training sessions</div>
                         <div class="task-item">Documentation delivery</div>
                         <div class="task-item">Transition to maintenance</div>
                     </div>
-
                     <div class="milestone handoff">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                         <span>System Operational — Maintenance begins</span>
@@ -530,15 +432,144 @@
             </div>
         </div>
 
+        <!-- ========== INVESTMENT SECTION ========== -->
+        <div class="mt-16 pt-8 border-t border-border">
+            <div class="text-center mb-8">
+                <span class="inline-flex w-12 h-12 rounded-full bg-primary text-primary-foreground items-center justify-center text-lg font-semibold mb-3">$</span>
+                <h2 class="text-xl font-semibold">Investment</h2>
+                <p class="text-sm text-muted-foreground mt-1">Complete pricing breakdown</p>
+            </div>
+
+            <!-- Main Investment -->
+            <div class="rounded-lg border border-border overflow-hidden mb-6">
+                <div class="bg-charcoal py-4">
+                    <h3 class="font-medium text-center">Your Investment</h3>
+                </div>
+                <div class="divide-y divide-border">
+                    <div class="flex justify-between items-center px-4 py-4">
+                        <div>
+                            <p class="font-medium">Upfront (All 5 Packages)</p>
+                            <p class="text-xs text-muted-foreground">One-time build</p>
+                        </div>
+                        <p class="text-2xl font-semibold">$27,000</p>
+                    </div>
+                    <div class="flex justify-between items-center px-4 py-4">
+                        <div>
+                            <p class="font-medium">Monthly Maintenance</p>
+                            <p class="text-xs text-muted-foreground">Ongoing management</p>
+                        </div>
+                        <p class="text-2xl font-semibold">$3,500<span class="text-sm font-normal text-muted-foreground">/mo</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maintenance Includes -->
+            <div class="rounded-lg border border-border overflow-hidden mb-6">
+                <div class="bg-charcoal py-4">
+                    <h3 class="font-medium text-center">Monthly Maintenance Includes</h3>
+                </div>
+                <div class="p-4">
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                        <div class="flex items-center gap-2"><svg class="w-4 h-4 text-[#5FFCC0]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Campaign management</div>
+                        <div class="flex items-center gap-2"><svg class="w-4 h-4 text-[#5FFCC0]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Weekly reporting</div>
+                        <div class="flex items-center gap-2"><svg class="w-4 h-4 text-[#5FFCC0]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> CRM maintenance</div>
+                        <div class="flex items-center gap-2"><svg class="w-4 h-4 text-[#5FFCC0]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> AI monitoring</div>
+                        <div class="flex items-center gap-2"><svg class="w-4 h-4 text-[#5FFCC0]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Creative refresh</div>
+                        <div class="flex items-center gap-2"><svg class="w-4 h-4 text-[#5FFCC0]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> ROI tracking</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platform Fees -->
+            <div class="rounded-lg border border-border overflow-hidden mb-6">
+                <div class="bg-charcoal py-4">
+                    <h3 class="font-medium text-center">Platform Fees (You Pay)</h3>
+                </div>
+                <div class="divide-y divide-border text-sm">
+                    <div class="flex justify-between px-4 py-3">
+                        <div>
+                            <p class="font-medium">WAVV</p>
+                            <p class="text-xs text-muted-foreground">Power dialer</p>
+                        </div>
+                        <p>$59<span class="text-muted-foreground">/mo</span></p>
+                    </div>
+                    <div class="flex justify-between px-4 py-3">
+                        <div>
+                            <p class="font-medium">CallRail</p>
+                            <p class="text-xs text-muted-foreground">Call attribution</p>
+                        </div>
+                        <p>$50-70<span class="text-muted-foreground">/mo</span></p>
+                    </div>
+                    <div class="flex justify-between px-4 py-3">
+                        <div>
+                            <p class="font-medium">SMS/Voice</p>
+                            <p class="text-xs text-muted-foreground">Per message</p>
+                        </div>
+                        <p class="text-muted-foreground">Variable</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ad Spend -->
+            <div class="rounded-lg border border-border overflow-hidden mb-6">
+                <div class="bg-charcoal py-4">
+                    <h3 class="font-medium text-center">Recommended Ad Spend</h3>
+                </div>
+                <div class="grid grid-cols-2 gap-3 p-4">
+                    <div class="rounded-md bg-secondary p-3 text-center">
+                        <p class="text-xs text-muted-foreground">Month 1</p>
+                        <p class="text-xl font-semibold mt-1">$3-4K</p>
+                    </div>
+                    <div class="rounded-md bg-secondary p-3 text-center">
+                        <p class="text-xs text-muted-foreground">Month 2+</p>
+                        <p class="text-xl font-semibold mt-1">$4.5-6K</p>
+                    </div>
+                </div>
+                <div class="divide-y divide-border text-sm border-t border-border">
+                    <div class="flex justify-between px-4 py-3">
+                        <span>Meta (FB/IG)</span>
+                        <span class="text-muted-foreground">$2,000-4,000</span>
+                    </div>
+                    <div class="flex justify-between px-4 py-3">
+                        <span>Google LSA</span>
+                        <span class="text-muted-foreground">$800-1,500</span>
+                    </div>
+                    <div class="flex justify-between px-4 py-3">
+                        <span>Google Search</span>
+                        <span class="text-muted-foreground">$200-500</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expected ROI -->
+            <div class="rounded-lg border border-border overflow-hidden">
+                <div class="bg-charcoal py-4">
+                    <h3 class="font-medium text-center">Expected Results</h3>
+                </div>
+                <div class="p-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center">
+                            <p class="text-2xl font-semibold">$30-50</p>
+                            <p class="text-sm text-muted-foreground">CPL (optimized)</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-semibold">25-40</p>
+                            <p class="text-sm text-muted-foreground">Leads/week</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Navigation -->
         <div class="flex justify-center pt-8 text-sm">
-            <a href="index.html" class="text-muted-foreground hover:text-foreground transition-colors">&larr; Back to Overview</a>
+            <a href="index.html" class="text-muted-foreground hover:text-foreground transition-colors">← Back to Overview</a>
         </div>
     </main>
 
     <footer class="border-t border-border mt-12 relative z-10">
         <div class="max-w-3xl mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
-            &copy; 2026 Endless Winning Agency
+            © 2026 Endless Winning Agency
         </div>
     </footer>
 
