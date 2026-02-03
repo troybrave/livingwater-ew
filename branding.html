@@ -1,159 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Branding | 60-Day Marketing System</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        border: "hsl(240 3.7% 15.9%)",
+                        background: "hsl(240 10% 3.9%)",
+                        foreground: "hsl(0 0% 98%)",
+                        primary: { DEFAULT: "hsl(0 0% 98%)", foreground: "hsl(240 5.9% 10%)" },
+                        secondary: { DEFAULT: "hsl(240 3.7% 15.9%)", foreground: "hsl(0 0% 98%)" },
+                        muted: { DEFAULT: "hsl(240 3.7% 15.9%)", foreground: "hsl(240 5% 64.9%)" },
+                        card: { DEFAULT: "hsl(240 10% 3.9%)", foreground: "hsl(0 0% 98%)" },
+                    },
+                }
+            }
+        }
+    </script>
     <style>
-        .pill-scroll::-webkit-scrollbar { display: none; }
-        .pill-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="bg-slate-900 text-white min-h-screen">
-    <header class="bg-gradient-to-b from-slate-800 to-slate-900 px-4 py-6 text-center">
-        <h1 class="text-xl md:text-2xl font-bold">60-Day Marketing System</h1>
-        <p class="text-slate-400 mt-1 text-sm">Brevard County Water Filtration</p>
+<body class="bg-background text-foreground min-h-screen antialiased">
+    <header class="border-b border-border">
+        <div class="max-w-3xl mx-auto px-4 py-6 text-center">
+            <h1 class="text-xl font-semibold tracking-tight">60-Day Marketing System</h1>
+        </div>
     </header>
 
-    <nav class="sticky top-0 z-50 bg-slate-800/95 backdrop-blur border-b border-slate-700">
-        <div class="pill-scroll overflow-x-auto px-4 py-3">
-            <div class="flex gap-2 min-w-max">
-                <a href="index.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">Overview</a>
-                <a href="branding.html" class="px-4 py-2 rounded-full text-sm font-medium bg-blue-600 text-white">Branding</a>
-                <a href="video.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">Video</a>
-                <a href="crm.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">CRM</a>
-                <a href="ai-agents.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">AI Agents</a>
-                <a href="social.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">Social</a>
-                <a href="costs.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">Costs</a>
-                <a href="timeline.html" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-700 text-slate-300 hover:bg-slate-600">Timeline</a>
+    <nav class="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
+        <div class="no-scrollbar overflow-x-auto">
+            <div class="flex gap-1 p-2 min-w-max max-w-3xl mx-auto">
+                <a href="index.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Overview</a>
+                <a href="branding.html" class="inline-flex items-center justify-center rounded-md bg-secondary text-secondary-foreground px-3 py-1.5 text-sm font-medium ring-1 ring-inset ring-white/10">Branding</a>
+                <a href="video.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Video</a>
+                <a href="crm.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">CRM</a>
+                <a href="ai.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">AI</a>
+                <a href="social.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Social</a>
+                <a href="costs.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Costs</a>
+                <a href="timeline.html" class="inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Timeline</a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-2xl mx-auto px-4 py-6 space-y-6">
-        <!-- Page Header -->
+    <main class="max-w-3xl mx-auto px-4 py-8 space-y-6">
+        <!-- Header -->
         <div class="flex items-center gap-3">
-            <span class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold">1</span>
+            <span class="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">1</span>
             <div>
-                <h2 class="text-xl font-bold">Branding & Positioning</h2>
-                <p class="text-slate-400 text-sm">Your visual identity & market position</p>
+                <h2 class="text-xl font-semibold">Branding & Positioning</h2>
+                <p class="text-sm text-muted-foreground">Visual identity & market position</p>
             </div>
         </div>
 
         <!-- Visual Identity -->
-        <section class="bg-slate-800 rounded-2xl p-5 border border-slate-700">
-            <h3 class="font-semibold text-blue-400 mb-4">Visual Identity</h3>
-            <div class="space-y-3">
-                <div class="flex justify-between items-center py-2 border-b border-slate-700">
-                    <span class="font-medium">Logo Design</span>
-                    <span class="text-slate-400 text-sm">Primary + icon + variants</span>
+        <div class="rounded-lg border border-border">
+            <div class="p-4 border-b border-border">
+                <h3 class="font-medium">Visual Identity</h3>
+            </div>
+            <div class="divide-y divide-border">
+                <div class="flex justify-between items-center px-4 py-3">
+                    <span class="text-sm">Logo Design</span>
+                    <span class="text-sm text-muted-foreground">Primary + icon + variants</span>
                 </div>
-                <div class="flex justify-between items-center py-2 border-b border-slate-700">
-                    <span class="font-medium">Color Palette</span>
-                    <span class="text-slate-400 text-sm">Primary, secondary, accent</span>
+                <div class="flex justify-between items-center px-4 py-3">
+                    <span class="text-sm">Color Palette</span>
+                    <span class="text-sm text-muted-foreground">Primary, secondary, accent</span>
                 </div>
-                <div class="flex justify-between items-center py-2 border-b border-slate-700">
-                    <span class="font-medium">Typography</span>
-                    <span class="text-slate-400 text-sm">Headline + body fonts</span>
+                <div class="flex justify-between items-center px-4 py-3">
+                    <span class="text-sm">Typography</span>
+                    <span class="text-sm text-muted-foreground">Headline + body fonts</span>
                 </div>
-                <div class="flex justify-between items-center py-2 border-b border-slate-700">
-                    <span class="font-medium">Sales Deck</span>
-                    <span class="text-slate-400 text-sm">Branded + payment links</span>
+                <div class="flex justify-between items-center px-4 py-3">
+                    <span class="text-sm">Sales Deck</span>
+                    <span class="text-sm text-muted-foreground">Branded + payment links</span>
                 </div>
-                <div class="flex justify-between items-center py-2 border-b border-slate-700">
-                    <span class="font-medium">Landing Page</span>
-                    <span class="text-slate-400 text-sm">Mobile-first, conversion-optimized</span>
+                <div class="flex justify-between items-center px-4 py-3">
+                    <span class="text-sm">Landing Page</span>
+                    <span class="text-sm text-muted-foreground">Mobile-first, optimized</span>
                 </div>
-                <div class="flex justify-between items-center py-2 border-b border-slate-700">
-                    <span class="font-medium">Website</span>
-                    <span class="text-slate-400 text-sm">Full business site</span>
+                <div class="flex justify-between items-center px-4 py-3">
+                    <span class="text-sm">Website</span>
+                    <span class="text-sm text-muted-foreground">Full business site</span>
                 </div>
-                <div class="flex justify-between items-center py-2">
-                    <span class="font-medium">Social Assets</span>
-                    <span class="text-slate-400 text-sm">Banners, avatars, covers</span>
+                <div class="flex justify-between items-center px-4 py-3">
+                    <span class="text-sm">Social Assets</span>
+                    <span class="text-sm text-muted-foreground">Banners, avatars, covers</span>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Messaging Framework -->
-        <section class="bg-slate-800 rounded-2xl p-5 border border-slate-700">
-            <h3 class="font-semibold text-blue-400 mb-4">Messaging Framework</h3>
+        <!-- Positioning Statement -->
+        <div class="rounded-lg border border-border p-4">
+            <h3 class="font-medium mb-3">Positioning Statement</h3>
+            <blockquote class="text-sm text-muted-foreground italic border-l-2 border-border pl-4">
+                "[Company] is a [category] for [target users] that [core benefit]. Unlike [competitor], we [key differentiator]."
+            </blockquote>
+        </div>
 
-            <div class="bg-slate-900/50 rounded-xl p-4 mb-4 border-l-4 border-blue-500">
-                <p class="text-sm italic text-slate-300">"[Company] is a [category] for [target users] that [core benefit]. Unlike [competitor], we [key differentiator]."</p>
+        <!-- Messaging Pillars -->
+        <div class="rounded-lg border border-border">
+            <div class="p-4 border-b border-border">
+                <h3 class="font-medium">5 Messaging Pillars</h3>
             </div>
-
-            <div class="space-y-3">
-                <div class="bg-slate-700/50 rounded-lg p-3">
-                    <p class="font-medium text-sm">Pain Points</p>
-                    <p class="text-slate-400 text-xs mt-1">What frustrates your customer?</p>
+            <div class="grid gap-3 p-4">
+                <div class="rounded-md bg-secondary p-3">
+                    <p class="text-sm font-medium">Pain Points</p>
+                    <p class="text-xs text-muted-foreground mt-1">What frustrates your customer?</p>
                 </div>
-                <div class="bg-slate-700/50 rounded-lg p-3">
-                    <p class="font-medium text-sm">Cost of Inaction</p>
-                    <p class="text-slate-400 text-xs mt-1">What happens if they do nothing?</p>
+                <div class="rounded-md bg-secondary p-3">
+                    <p class="text-sm font-medium">Cost of Inaction</p>
+                    <p class="text-xs text-muted-foreground mt-1">What happens if they do nothing?</p>
                 </div>
-                <div class="bg-slate-700/50 rounded-lg p-3">
-                    <p class="font-medium text-sm">Competitive Edge</p>
-                    <p class="text-slate-400 text-xs mt-1">Why you vs. alternatives?</p>
+                <div class="rounded-md bg-secondary p-3">
+                    <p class="text-sm font-medium">Competitive Edge</p>
+                    <p class="text-xs text-muted-foreground mt-1">Why you vs. alternatives?</p>
                 </div>
-                <div class="bg-slate-700/50 rounded-lg p-3">
-                    <p class="font-medium text-sm">Solution Promise</p>
-                    <p class="text-slate-400 text-xs mt-1">What do you deliver?</p>
+                <div class="rounded-md bg-secondary p-3">
+                    <p class="text-sm font-medium">Solution Promise</p>
+                    <p class="text-xs text-muted-foreground mt-1">What do you deliver?</p>
                 </div>
-                <div class="bg-slate-700/50 rounded-lg p-3">
-                    <p class="font-medium text-sm">Outcome</p>
-                    <p class="text-slate-400 text-xs mt-1">What transformation do they experience?</p>
+                <div class="rounded-md bg-secondary p-3">
+                    <p class="text-sm font-medium">Outcome</p>
+                    <p class="text-xs text-muted-foreground mt-1">What transformation do they experience?</p>
                 </div>
             </div>
-        </section>
+        </div>
 
         <!-- Differentiation -->
-        <section class="bg-slate-800 rounded-2xl p-5 border border-slate-700">
-            <h3 class="font-semibold text-blue-400 mb-4">How You're Different</h3>
-            <div class="space-y-3">
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="bg-red-900/30 rounded-lg p-3 text-center">
-                        <p class="text-red-400 text-xs uppercase mb-1">Them</p>
-                        <p class="text-sm">Generic solutions</p>
+        <div class="rounded-lg border border-border">
+            <div class="p-4 border-b border-border">
+                <h3 class="font-medium">How You're Different</h3>
+            </div>
+            <div class="p-4 space-y-3">
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div class="rounded-md bg-red-950/50 border border-red-900/50 p-3 text-center">
+                        <p class="text-red-400 text-xs mb-1">Them</p>
+                        <p>Generic solutions</p>
                     </div>
-                    <div class="bg-green-900/30 rounded-lg p-3 text-center">
-                        <p class="text-green-400 text-xs uppercase mb-1">You</p>
-                        <p class="text-sm">Customized for local water</p>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="bg-red-900/30 rounded-lg p-3 text-center">
-                        <p class="text-red-400 text-xs uppercase mb-1">Them</p>
-                        <p class="text-sm">Pressure to close same-day</p>
-                    </div>
-                    <div class="bg-green-900/30 rounded-lg p-3 text-center">
-                        <p class="text-green-400 text-xs uppercase mb-1">You</p>
-                        <p class="text-sm">No pressure approach</p>
+                    <div class="rounded-md bg-green-950/50 border border-green-900/50 p-3 text-center">
+                        <p class="text-green-400 text-xs mb-1">You</p>
+                        <p>Local water expertise</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="bg-red-900/30 rounded-lg p-3 text-center">
-                        <p class="text-red-400 text-xs uppercase mb-1">Them</p>
-                        <p class="text-sm">Guess what you need</p>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div class="rounded-md bg-red-950/50 border border-red-900/50 p-3 text-center">
+                        <p class="text-red-400 text-xs mb-1">Them</p>
+                        <p>Same-day pressure</p>
                     </div>
-                    <div class="bg-green-900/30 rounded-lg p-3 text-center">
-                        <p class="text-green-400 text-xs uppercase mb-1">You</p>
-                        <p class="text-sm">Test first, then recommend</p>
+                    <div class="rounded-md bg-green-950/50 border border-green-900/50 p-3 text-center">
+                        <p class="text-green-400 text-xs mb-1">You</p>
+                        <p>No pressure approach</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div class="rounded-md bg-red-950/50 border border-red-900/50 p-3 text-center">
+                        <p class="text-red-400 text-xs mb-1">Them</p>
+                        <p>Guess what you need</p>
+                    </div>
+                    <div class="rounded-md bg-green-950/50 border border-green-900/50 p-3 text-center">
+                        <p class="text-green-400 text-xs mb-1">You</p>
+                        <p>Test first, then recommend</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <!-- Navigation -->
-        <div class="flex justify-between pt-4">
-            <a href="index.html" class="text-slate-400 hover:text-white text-sm">← Overview</a>
-            <a href="video.html" class="text-blue-400 hover:text-blue-300 text-sm">Video →</a>
+        <div class="flex justify-between pt-4 text-sm">
+            <a href="index.html" class="text-muted-foreground hover:text-foreground transition-colors">← Overview</a>
+            <a href="video.html" class="text-muted-foreground hover:text-foreground transition-colors">Video →</a>
         </div>
     </main>
 
-    <footer class="text-center py-8 text-slate-500 text-sm border-t border-slate-800">
-        <p>© 2026 Endless Winning Agency</p>
+    <footer class="border-t border-border mt-12">
+        <div class="max-w-3xl mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
+            © 2026 Endless Winning Agency
+        </div>
     </footer>
 </body>
 </html>
