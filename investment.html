@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investment | 60-Day Marketing System</title>
+    <title>Investment & ROI | 60-Day Marketing System</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -55,7 +55,7 @@
             right: 0;
             background: linear-gradient(to left, hsl(220 20% 6%), transparent);
         }
-    
+
         /* Ambient glow */
         .ambient-glow {
             position: fixed;
@@ -97,20 +97,8 @@
             opacity: 0;
         }
         @keyframes ripple-expand {
-            0% {
-                width: 0;
-                height: 0;
-                opacity: 0.6;
-                border-width: 2px;
-            }
-            100% {
-                width: 300px;
-                height: 300px;
-                opacity: 0;
-                border-width: 1px;
-                margin-left: -150px;
-                margin-top: -150px;
-            }
+            0% { width: 0; height: 0; opacity: 0.6; border-width: 2px; }
+            100% { width: 300px; height: 300px; opacity: 0; border-width: 1px; margin-left: -150px; margin-top: -150px; }
         }
 
         /* Glass card effect */
@@ -123,12 +111,29 @@
         .glass-card:hover {
             border-color: rgba(138, 178, 178, 0.2);
         }
+
+        /* Highlight box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(95, 252, 192, 0.1) 0%, rgba(56, 154, 191, 0.1) 100%);
+            border: 1px solid rgba(95, 252, 192, 0.3);
+        }
     </style>
 </head>
 <body class="bg-background text-foreground min-h-screen antialiased relative">
+    <!-- Ambient Effects -->
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-2"></div>
+    <div class="ripple-container" id="rippleContainer"></div>
+
     <header class="border-b border-border relative z-10">
-        <div class="max-w-3xl mx-auto px-4 py-6 text-center">
-            <h1 class="text-xl font-semibold tracking-tight">60-Day Marketing System</h1>
+        <div class="max-w-3xl mx-auto px-4 py-8 text-center">
+            <p class="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-2">60-Day Marketing Deliverable</p>
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Living Water Florida</h1>
+            <div class="mt-4">
+                <span class="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold tracking-wide" style="background: linear-gradient(135deg, #d4af37 0%, #f9e79f 25%, #d4af37 50%, #b8860b 75%, #d4af37 100%); color: #1a1a1a; box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);">
+                    Premium
+                </span>
+            </div>
         </div>
     </header>
 
@@ -139,31 +144,92 @@
                 <a href="branding.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Branding</a>
                 <a href="video.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Video</a>
                 <a href="crm.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">CRM</a>
-                <a href="ai.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">AI</a>
+                <a href="ai.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">AI + Integrations</a>
                 <a href="social.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Social</a>
                 <a href="ads.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Ads</a>
+                <a href="timeline.html" class="flex-shrink-0 inline-flex items-center justify-center rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:bg-secondary transition-colors">Timeline</a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-3xl mx-auto px-4 py-8 space-y-6 relative z-10">
-        <!-- Investment / Timeline Toggle -->
-        <div class="flex justify-center gap-2">
-            <a href="investment.html" class="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 py-2 text-sm font-semibold">
-                Investment
-            </a>
-            <a href="timeline.html" class="inline-flex items-center justify-center rounded-full border border-border text-muted-foreground px-6 py-2 text-sm font-medium hover:bg-secondary transition-colors">
-                Timeline
-            </a>
-        </div>
-
+    <main class="max-w-3xl mx-auto px-4 py-8 space-y-8 relative z-10">
+        <!-- Header -->
         <div class="text-center">
             <span class="inline-flex w-12 h-12 rounded-full bg-primary text-primary-foreground items-center justify-center text-lg font-semibold mb-3">$</span>
-            <h2 class="text-xl font-semibold">Investment</h2>
-            <p class="text-sm text-muted-foreground mt-1">Complete pricing breakdown</p>
+            <h2 class="text-2xl font-semibold">Investment & ROI</h2>
+            <p class="text-sm text-muted-foreground mt-1">The math behind your growth</p>
         </div>
 
-        <!-- Main Investment -->
+        <!-- ========== THE ROI MATH ========== -->
+        <div class="rounded-xl border-2 border-[#5FFCC0]/30 overflow-hidden highlight-box">
+            <div class="py-4 border-b border-[#5FFCC0]/20">
+                <h3 class="font-semibold text-center text-lg" style="color: #5FFCC0;">The ROI Math</h3>
+            </div>
+            <div class="p-6 space-y-6">
+                <!-- Unit Economics -->
+                <div>
+                    <p class="text-xs uppercase tracking-wide text-muted-foreground mb-3">Unit Economics</p>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center py-2 border-b border-border/50">
+                            <span class="text-muted-foreground">Profit per system sold</span>
+                            <span class="font-semibold text-lg">$4,000</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-border/50">
+                            <span class="text-muted-foreground">Industry close rate</span>
+                            <span class="font-semibold">25%</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-border/50">
+                            <span class="text-muted-foreground">Leads needed per sale</span>
+                            <span class="font-semibold">4 leads</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 rounded-lg px-3 -mx-3" style="background: rgba(95, 252, 192, 0.1);">
+                            <span class="font-medium">Profit per lead</span>
+                            <span class="font-bold text-xl" style="color: #5FFCC0;">$1,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monthly Projection -->
+                <div>
+                    <p class="text-xs uppercase tracking-wide text-muted-foreground mb-3">Monthly Projection (15 Leads/Week)</p>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center py-2 border-b border-border/50">
+                            <span class="text-muted-foreground">Leads per month</span>
+                            <span class="font-semibold">60 leads</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-border/50">
+                            <span class="text-muted-foreground">Sales closed (@ 25%)</span>
+                            <span class="font-semibold">15 systems</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-border/50">
+                            <span class="text-muted-foreground">Gross profit</span>
+                            <span class="font-semibold">$60,000</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-border/50">
+                            <span class="text-muted-foreground">Ad spend (@ $125 CPL)</span>
+                            <span class="font-semibold text-red-400">-$7,500</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 border-b border-border/50">
+                            <span class="text-muted-foreground">Agency fee</span>
+                            <span class="font-semibold text-red-400">-$3,649</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2 rounded-lg px-3 -mx-3" style="background: rgba(95, 252, 192, 0.15);">
+                            <span class="font-semibold">Net profit/month</span>
+                            <span class="font-bold text-2xl" style="color: #5FFCC0;">$48,851</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Breakeven -->
+                <div class="text-center pt-4 border-t border-border/50">
+                    <p class="text-sm text-muted-foreground">Upfront investment paid back in</p>
+                    <p class="text-3xl font-bold mt-1" style="color: #5FFCC0;">~17 days</p>
+                    <p class="text-xs text-muted-foreground mt-1">of leads flowing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== YOUR INVESTMENT ========== -->
         <div class="rounded-lg border border-border overflow-hidden">
             <div class="bg-charcoal py-4">
                 <h3 class="font-medium text-center">Your Investment</h3>
@@ -171,28 +237,28 @@
             <div class="divide-y divide-border">
                 <div class="flex justify-between items-center px-4 py-4">
                     <div>
-                        <p class="font-medium">Upfront (All 5 Packages)</p>
-                        <p class="text-xs text-muted-foreground">One-time build</p>
+                        <p class="font-medium">Upfront Build (All 6 Packages)</p>
+                        <p class="text-xs text-muted-foreground">One-time investment</p>
                     </div>
-                    <p class="text-2xl font-semibold">$27,000</p>
+                    <p class="text-2xl font-semibold">$27,995</p>
                 </div>
                 <div class="flex justify-between items-center px-4 py-4">
                     <div>
-                        <p class="font-medium">Monthly Maintenance</p>
-                        <p class="text-xs text-muted-foreground">Ongoing management</p>
+                        <p class="font-medium">Monthly Agency Service</p>
+                        <p class="text-xs text-muted-foreground">Ongoing management & optimization</p>
                     </div>
-                    <p class="text-2xl font-semibold">$3,500<span class="text-sm font-normal text-muted-foreground">/mo</span></p>
+                    <p class="text-2xl font-semibold">$3,649<span class="text-sm font-normal text-muted-foreground">/mo</span></p>
                 </div>
             </div>
         </div>
 
-        <!-- Maintenance Includes -->
+        <!-- ========== WHAT'S INCLUDED ========== -->
         <div class="rounded-lg border border-border overflow-hidden">
             <div class="bg-charcoal py-4">
-                <h3 class="font-medium text-center">Monthly Maintenance Includes</h3>
+                <h3 class="font-medium text-center">Monthly Agency Service Includes</h3>
             </div>
-            <div class="p-4">
-                <div class="grid grid-cols-2 gap-2 text-sm">
+            <div class="p-4 flex justify-center">
+                <div class="grid grid-cols-2 gap-x-12 gap-y-3 text-sm">
                     <div class="flex items-center gap-2"><svg class="w-4 h-4 text-[#5FFCC0]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Campaign management</div>
                     <div class="flex items-center gap-2"><svg class="w-4 h-4 text-[#5FFCC0]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Weekly reporting</div>
                     <div class="flex items-center gap-2"><svg class="w-4 h-4 text-[#5FFCC0]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> CRM maintenance</div>
@@ -203,88 +269,167 @@
             </div>
         </div>
 
-        <!-- Platform Fees -->
-        <div class="rounded-lg border border-border overflow-hidden">
-            <div class="bg-charcoal py-4">
-                <h3 class="font-medium text-center">Platform Fees (You Pay)</h3>
-            </div>
-            <div class="divide-y divide-border text-sm">
-                <div class="flex justify-between px-4 py-3">
-                    <div>
-                        <p class="font-medium">WAVV</p>
-                        <p class="text-xs text-muted-foreground">Power dialer</p>
-                    </div>
-                    <p>$59<span class="text-muted-foreground">/mo</span></p>
-                </div>
-                <div class="flex justify-between px-4 py-3">
-                    <div>
-                        <p class="font-medium">CallRail</p>
-                        <p class="text-xs text-muted-foreground">Call attribution</p>
-                    </div>
-                    <p>$50-70<span class="text-muted-foreground">/mo</span></p>
-                </div>
-                <div class="flex justify-between px-4 py-3">
-                    <div>
-                        <p class="font-medium">SMS/Voice</p>
-                        <p class="text-xs text-muted-foreground">Per message</p>
-                    </div>
-                    <p class="text-muted-foreground">Variable</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Ad Spend -->
+        <!-- ========== AD SPEND ========== -->
         <div class="rounded-lg border border-border overflow-hidden">
             <div class="bg-charcoal py-4">
                 <h3 class="font-medium text-center">Recommended Ad Spend</h3>
-            </div>
-            <div class="grid grid-cols-2 gap-3 p-4">
-                <div class="rounded-md bg-secondary p-3 text-center">
-                    <p class="text-xs text-muted-foreground">Month 1</p>
-                    <p class="text-xl font-semibold mt-1">$3-4K</p>
-                </div>
-                <div class="rounded-md bg-secondary p-3 text-center">
-                    <p class="text-xs text-muted-foreground">Month 2+</p>
-                    <p class="text-xl font-semibold mt-1">$4.5-6K</p>
-                </div>
-            </div>
-            <div class="divide-y divide-border text-sm border-t border-border">
-                <div class="flex justify-between px-4 py-3">
-                    <span>Meta (FB/IG)</span>
-                    <span class="text-muted-foreground">$2,000-4,000</span>
-                </div>
-                <div class="flex justify-between px-4 py-3">
-                    <span>Google LSA</span>
-                    <span class="text-muted-foreground">$800-1,500</span>
-                </div>
-                <div class="flex justify-between px-4 py-3">
-                    <span>Google Search</span>
-                    <span class="text-muted-foreground">$200-500</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Expected ROI -->
-        <div class="rounded-lg border border-border overflow-hidden">
-            <div class="bg-charcoal py-4">
-                <h3 class="font-medium text-center">Expected Results</h3>
+                <p class="text-xs text-muted-foreground text-center mt-1">Paid directly to platforms (not to us)</p>
             </div>
             <div class="p-4">
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <p class="text-2xl font-semibold">$30-50</p>
-                        <p class="text-sm text-muted-foreground">CPL (optimized)</p>
+                <div class="grid grid-cols-2 gap-3 mb-4">
+                    <div class="rounded-md bg-secondary p-4 text-center">
+                        <p class="text-xs text-muted-foreground">Month 1 (Learning)</p>
+                        <p class="text-2xl font-semibold mt-1">$4-5K</p>
+                        <p class="text-xs text-muted-foreground mt-1">Higher CPL expected</p>
                     </div>
-                    <div>
-                        <p class="text-2xl font-semibold">25-40</p>
-                        <p class="text-sm text-muted-foreground">Leads/week</p>
+                    <div class="rounded-md bg-secondary p-4 text-center">
+                        <p class="text-xs text-muted-foreground">Month 2+ (Optimized)</p>
+                        <p class="text-2xl font-semibold mt-1">$6-8K</p>
+                        <p class="text-xs text-muted-foreground mt-1">Scale what works</p>
+                    </div>
+                </div>
+                <div class="divide-y divide-border text-sm border-t border-border">
+                    <div class="flex justify-between px-2 py-3">
+                        <span>Meta (Facebook/Instagram)</span>
+                        <span class="text-muted-foreground">$3,000-5,000</span>
+                    </div>
+                    <div class="flex justify-between px-2 py-3">
+                        <span>Google Local Services</span>
+                        <span class="text-muted-foreground">$1,000-2,000</span>
+                    </div>
+                    <div class="flex justify-between px-2 py-3">
+                        <span>Google Search</span>
+                        <span class="text-muted-foreground">$500-1,000</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="flex justify-center pt-4 text-sm">
-            <a href="index.html" class="text-muted-foreground hover:text-foreground transition-colors">← Back to Overview</a>
+        <!-- ========== PLATFORM FEES ========== -->
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">Platform Fees (You Pay Directly)</h3>
+            </div>
+            <div class="divide-y divide-border text-sm">
+                <div class="flex justify-between items-center px-4 py-3">
+                    <div>
+                        <p class="font-medium">WAVV</p>
+                        <p class="text-xs text-muted-foreground">Power dialer for sales team</p>
+                    </div>
+                    <p>$59<span class="text-muted-foreground">/mo</span></p>
+                </div>
+                <div class="flex justify-between items-center px-4 py-3">
+                    <div>
+                        <p class="font-medium">CallRail</p>
+                        <p class="text-xs text-muted-foreground">Call tracking & attribution</p>
+                    </div>
+                    <p>$50-70<span class="text-muted-foreground">/mo</span></p>
+                </div>
+                <div class="flex justify-between items-center px-4 py-3">
+                    <div>
+                        <p class="font-medium">Messaging (SMS/Voice)</p>
+                        <p class="text-xs text-muted-foreground">Pay per message/minute</p>
+                    </div>
+                    <p class="text-muted-foreground">~$100-200/mo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== EXPECTED RESULTS ========== -->
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">Expected Results by Phase</h3>
+            </div>
+            <div class="p-4">
+                <div class="space-y-4">
+                    <!-- Month 1 -->
+                    <div class="rounded-lg bg-secondary/50 p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-medium">Month 1 (Learning Phase)</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-yellow-900/50 text-yellow-400">Ramping</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-center text-sm">
+                            <div>
+                                <p class="text-lg font-semibold">$150-200</p>
+                                <p class="text-xs text-muted-foreground">CPL</p>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold">8-12</p>
+                                <p class="text-xs text-muted-foreground">Leads/week</p>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold">60-70%</p>
+                                <p class="text-xs text-muted-foreground">Show rate</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Month 2+ -->
+                    <div class="rounded-lg p-4" style="background: rgba(95, 252, 192, 0.1); border: 1px solid rgba(95, 252, 192, 0.2);">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-medium">Month 2+ (Optimized)</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-green-900/50 text-[#5FFCC0]">Scaled</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-center text-sm">
+                            <div>
+                                <p class="text-lg font-semibold" style="color: #5FFCC0;">$100-150</p>
+                                <p class="text-xs text-muted-foreground">CPL</p>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold" style="color: #5FFCC0;">15-20</p>
+                                <p class="text-xs text-muted-foreground">Leads/week</p>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold" style="color: #5FFCC0;">70-80%</p>
+                                <p class="text-xs text-muted-foreground">Show rate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== TOTAL YEAR 1 ========== -->
+        <div class="rounded-lg border border-border overflow-hidden">
+            <div class="bg-charcoal py-4">
+                <h3 class="font-medium text-center">Year 1 Total Investment</h3>
+                <p class="text-xs text-muted-foreground text-center mt-1">Full transparency on all costs</p>
+            </div>
+            <div class="p-4">
+                <div class="space-y-3 text-sm">
+                    <div class="flex justify-between py-2 border-b border-border/50">
+                        <span class="text-muted-foreground">Upfront build</span>
+                        <span>$27,995</span>
+                    </div>
+                    <div class="flex justify-between py-2 border-b border-border/50">
+                        <span class="text-muted-foreground">Agency service (12 mo)</span>
+                        <span>$43,788</span>
+                    </div>
+                    <div class="flex justify-between py-2 border-b border-border/50">
+                        <span class="text-muted-foreground">Ad spend (est. $6K/mo avg)</span>
+                        <span>$72,000</span>
+                    </div>
+                    <div class="flex justify-between py-2 border-b border-border/50">
+                        <span class="text-muted-foreground">Platform fees (est.)</span>
+                        <span>$3,600</span>
+                    </div>
+                    <div class="flex justify-between py-3 rounded-lg px-3 -mx-3 font-semibold" style="background: rgba(255,255,255,0.05);">
+                        <span>Total Year 1</span>
+                        <span class="text-xl">~$147,000</span>
+                    </div>
+                </div>
+                <div class="mt-4 p-4 rounded-lg text-center" style="background: rgba(95, 252, 192, 0.1);">
+                    <p class="text-sm text-muted-foreground">Expected Year 1 gross profit (conservative)</p>
+                    <p class="text-3xl font-bold mt-1" style="color: #5FFCC0;">$480,000+</p>
+                    <p class="text-xs text-muted-foreground mt-2">Based on 10 systems/month @ $4K profit each</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-between pt-4 text-sm">
+            <a href="timeline.html" class="text-muted-foreground hover:text-foreground transition-colors">← Timeline</a>
+            <a href="index.html" class="text-muted-foreground hover:text-foreground transition-colors">Overview →</a>
         </div>
     </main>
 
