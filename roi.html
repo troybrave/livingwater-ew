@@ -576,98 +576,107 @@
             </div>
         </div>
 
-        <!-- ========== INVESTMENT vs PROFIT TIMELINE ========== -->
+        <!-- ========== INVESTMENT vs PROFIT LINE GRAPH ========== -->
         <div class="mt-8 rounded-xl border border-border overflow-hidden" style="background: hsl(210 15% 8%);">
             <div class="py-4 border-b border-border">
-                <h3 class="font-semibold text-center text-lg">Investment vs. Profit Over Time</h3>
-                <p class="text-xs text-muted-foreground text-center mt-1">Month-by-month breakdown showing your path to ROI</p>
+                <h3 class="font-semibold text-center text-lg">Investment vs. Profit Over 12 Months</h3>
+                <p class="text-xs text-muted-foreground text-center mt-1">Cumulative costs vs. cumulative revenue</p>
             </div>
             <div class="p-4 sm:p-6">
-                <!-- Header Row -->
-                <div class="grid grid-cols-4 gap-2 text-xs uppercase tracking-wide text-muted-foreground pb-3 border-b border-border/50 mb-1">
-                    <span>Month</span>
-                    <span class="text-right">Costs</span>
-                    <span class="text-right">Revenue</span>
-                    <span class="text-right">Cumulative</span>
+                <!-- Legend -->
+                <div class="flex justify-center gap-6 mb-4">
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="w-4 h-0.5 inline-block rounded" style="background: #ef4444;"></span>
+                        <span class="text-muted-foreground">Total Investment</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="w-4 h-0.5 inline-block rounded" style="background: #5FFCC0;"></span>
+                        <span class="text-muted-foreground">Total Revenue</span>
+                    </div>
                 </div>
 
-                <!-- Month 0 -->
-                <div class="grid grid-cols-4 gap-2 py-3 border-b border-border/30 text-sm">
-                    <span class="font-medium">Kickoff</span>
-                    <span class="text-right text-red-400">-$27,995</span>
-                    <span class="text-right text-muted-foreground">—</span>
-                    <span class="text-right font-semibold text-red-400">-$27,995</span>
-                </div>
+                <!-- SVG Chart -->
+                <svg viewBox="0 0 600 320" class="w-full" style="font-family: ui-sans-serif, system-ui, sans-serif;">
+                    <!-- Grid lines -->
+                    <line x1="65" y1="270" x2="580" y2="270" stroke="hsl(210 15% 15%)" stroke-width="1"/>
+                    <line x1="65" y1="211" x2="580" y2="211" stroke="hsl(210 15% 12%)" stroke-width="0.5" stroke-dasharray="4,4"/>
+                    <line x1="65" y1="152" x2="580" y2="152" stroke="hsl(210 15% 12%)" stroke-width="0.5" stroke-dasharray="4,4"/>
+                    <line x1="65" y1="93" x2="580" y2="93" stroke="hsl(210 15% 12%)" stroke-width="0.5" stroke-dasharray="4,4"/>
+                    <line x1="65" y1="35" x2="580" y2="35" stroke="hsl(210 15% 12%)" stroke-width="0.5" stroke-dasharray="4,4"/>
 
-                <!-- Month 1 - BREAKEVEN -->
-                <div class="grid grid-cols-4 gap-2 py-3 rounded-lg px-2 -mx-2 text-sm" style="background: rgba(95, 252, 192, 0.1); border: 1px solid rgba(95, 252, 192, 0.3);">
+                    <!-- Y-axis labels -->
+                    <text x="60" y="274" text-anchor="end" fill="hsl(210 10% 55%)" font-size="10">$0</text>
+                    <text x="60" y="215" text-anchor="end" fill="hsl(210 10% 55%)" font-size="10">$200K</text>
+                    <text x="60" y="156" text-anchor="end" fill="hsl(210 10% 55%)" font-size="10">$400K</text>
+                    <text x="60" y="97" text-anchor="end" fill="hsl(210 10% 55%)" font-size="10">$600K</text>
+                    <text x="60" y="39" text-anchor="end" fill="hsl(210 10% 55%)" font-size="10">$800K</text>
+
+                    <!-- X-axis labels -->
+                    <text x="65" y="290" text-anchor="middle" fill="hsl(210 10% 55%)" font-size="10">0</text>
+                    <text x="108" y="290" text-anchor="middle" fill="hsl(210 10% 55%)" font-size="10">1</text>
+                    <text x="151" y="290" text-anchor="middle" fill="hsl(210 10% 55%)" font-size="10">2</text>
+                    <text x="194" y="290" text-anchor="middle" fill="hsl(210 10% 55%)" font-size="10">3</text>
+                    <text x="237" y="290" text-anchor="middle" fill="hsl(210 10% 55%)" font-size="10">4</text>
+                    <text x="280" y="290" text-anchor="middle" fill="hsl(210 10% 55%)" font-size="10">5</text>
+                    <text x="322" y="290" text-anchor="middle" fill="hsl(210 10% 55%)" font-size="10">6</text>
+                    <text x="365" y="290" text-anchor="middle" fill="hsl(210 10% 55%)" font-size="10">7</text>
+                    <text x="408" y="290" text-anchor="middle" fill="hsl(210 10% 55%)" font-size="10">8</text>
+                    <text x="451" y="290" text-anchor="middle" fill="hsl(210 10% 55%)" font-size="10">9</text>
+                    <text x="494" y="290" text-anchor="middle" fill="hsl(210 10% 55%)" font-size="10">10</text>
+                    <text x="537" y="290" text-anchor="middle" fill="hsl(210 10% 55%)" font-size="10">11</text>
+                    <text x="580" y="290" text-anchor="middle" fill="hsl(210 10% 55%)" font-size="10">12</text>
+                    <text x="322" y="308" text-anchor="middle" fill="hsl(210 10% 45%)" font-size="11">Month</text>
+
+                    <!-- Revenue fill (green area under curve) -->
+                    <polygon points="65,270 108,256 151,235 194,214 237,193 280,172 322,151 365,130 408,109 451,88 494,67 537,47 580,26 580,270" fill="url(#greenGradient)" opacity="0.15"/>
+
+                    <!-- Investment fill (red area under curve) -->
+                    <polygon points="65,262 108,259 151,256 194,253 237,249 280,246 322,243 365,240 408,236 451,233 494,230 537,226 580,223 580,270 65,270" fill="url(#redGradient)" opacity="0.2"/>
+
+                    <!-- Gradient definitions -->
+                    <defs>
+                        <linearGradient id="greenGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#5FFCC0"/>
+                            <stop offset="100%" stop-color="#5FFCC0" stop-opacity="0"/>
+                        </linearGradient>
+                        <linearGradient id="redGradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#ef4444"/>
+                            <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Investment line (red) - cumulative costs -->
+                    <polyline
+                        points="65,262 108,259 151,256 194,253 237,249 280,246 322,243 365,240 408,236 451,233 494,230 537,226 580,223"
+                        fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <!-- Revenue line (green) - cumulative revenue -->
+                    <polyline
+                        points="65,270 108,256 151,235 194,214 237,193 280,172 322,151 365,130 408,109 451,88 494,67 537,47 580,26"
+                        fill="none" stroke="#5FFCC0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <!-- Breakeven crossover point -->
+                    <circle cx="96" cy="258" r="5" fill="#5FFCC0" stroke="hsl(220 20% 6%)" stroke-width="2"/>
+                    <text x="96" y="250" text-anchor="middle" fill="#5FFCC0" font-size="9" font-weight="600">BREAKEVEN</text>
+
+                    <!-- End point labels -->
+                    <text x="580" y="218" text-anchor="end" fill="#ef4444" font-size="10" font-weight="600">$159K</text>
+                    <text x="580" y="21" text-anchor="end" fill="#5FFCC0" font-size="10" font-weight="600">$831K</text>
+                </svg>
+
+                <!-- Summary stats below chart -->
+                <div class="grid grid-cols-3 gap-4 mt-4 pt-4 border-t border-border/50 text-center">
                     <div>
-                        <span class="font-semibold" style="color: #5FFCC0;">Month 1</span>
-                        <p class="text-xs" style="color: #5FFCC0;">BREAKEVEN</p>
+                        <p class="text-xs text-muted-foreground">Year 1 costs</p>
+                        <p class="font-semibold text-red-400">$159,283</p>
                     </div>
-                    <span class="text-right text-red-400">-$8,649</span>
-                    <span class="text-right" style="color: #5FFCC0;">+$47,500</span>
-                    <span class="text-right font-bold text-lg" style="color: #5FFCC0;">+$10,856</span>
-                </div>
-
-                <!-- Month 2 -->
-                <div class="grid grid-cols-4 gap-2 py-3 border-b border-border/30 text-sm">
                     <div>
-                        <span class="font-medium">Month 2</span>
-                        <p class="text-xs text-muted-foreground">Optimized</p>
+                        <p class="text-xs text-muted-foreground">Year 1 revenue</p>
+                        <p class="font-semibold" style="color: #5FFCC0;">$831,250</p>
                     </div>
-                    <span class="text-right text-red-400">-$11,149</span>
-                    <span class="text-right" style="color: #5FFCC0;">+$71,250</span>
-                    <span class="text-right font-semibold" style="color: #5FFCC0;">+$70,957</span>
-                </div>
-
-                <!-- Month 3 -->
-                <div class="grid grid-cols-4 gap-2 py-3 border-b border-border/30 text-sm">
-                    <span class="font-medium">Month 3</span>
-                    <span class="text-right text-red-400">-$11,149</span>
-                    <span class="text-right" style="color: #5FFCC0;">+$71,250</span>
-                    <span class="text-right font-semibold" style="color: #5FFCC0;">+$131,058</span>
-                </div>
-
-                <!-- Month 6 -->
-                <div class="grid grid-cols-4 gap-2 py-3 border-b border-border/30 text-sm">
-                    <span class="font-medium">Month 6</span>
-                    <span class="text-right text-red-400">-$11,149</span>
-                    <span class="text-right" style="color: #5FFCC0;">+$71,250</span>
-                    <span class="text-right font-semibold" style="color: #5FFCC0;">+$311,361</span>
-                </div>
-
-                <!-- Month 12 -->
-                <div class="grid grid-cols-4 gap-2 py-3 border-b border-border/30 text-sm">
-                    <span class="font-medium">Month 12</span>
-                    <span class="text-right text-red-400">-$11,149</span>
-                    <span class="text-right" style="color: #5FFCC0;">+$71,250</span>
-                    <span class="text-right font-bold text-lg" style="color: #5FFCC0;">+$671,967</span>
-                </div>
-
-                <!-- Visual Progress Bar -->
-                <div class="mt-6 pt-4 border-t border-border/50">
-                    <div class="flex justify-between text-xs text-muted-foreground mb-2">
-                        <span>Kickoff (-$28K)</span>
-                        <span style="color: #5FFCC0;">Breakeven (Month 1)</span>
-                        <span>Month 12</span>
-                    </div>
-                    <div class="relative h-3 rounded-full overflow-hidden" style="background: hsl(240 3.7% 15.9%);">
-                        <div class="absolute left-0 top-0 h-full rounded-full" style="width: 100%; background: linear-gradient(90deg, #ef4444 0%, #5FFCC0 8%, #5FFCC0 100%);"></div>
-                    </div>
-                    <div class="grid grid-cols-3 gap-4 mt-4 text-center">
-                        <div>
-                            <p class="text-xs text-muted-foreground">Year 1 costs</p>
-                            <p class="font-semibold text-red-400">$159,283</p>
-                        </div>
-                        <div>
-                            <p class="text-xs text-muted-foreground">Year 1 revenue</p>
-                            <p class="font-semibold" style="color: #5FFCC0;">$831,250</p>
-                        </div>
-                        <div>
-                            <p class="text-xs text-muted-foreground">Year 1 net profit</p>
-                            <p class="font-bold text-lg" style="color: #5FFCC0;">+$671,967</p>
-                        </div>
+                    <div>
+                        <p class="text-xs text-muted-foreground">Year 1 net profit</p>
+                        <p class="font-bold text-lg" style="color: #5FFCC0;">+$671,967</p>
                     </div>
                 </div>
             </div>
