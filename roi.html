@@ -512,7 +512,7 @@
                     <div class="space-y-3">
                         <div class="flex justify-between items-center py-2 border-b border-border/50">
                             <span class="text-muted-foreground">Profit per system sold</span>
-                            <span class="font-semibold text-lg">$4,000</span>
+                            <span class="font-semibold text-lg">$1,000</span>
                         </div>
                         <div class="flex justify-between items-center py-2 border-b border-border/50">
                             <span class="text-muted-foreground">Industry close rate</span>
@@ -524,7 +524,7 @@
                         </div>
                         <div class="flex justify-between items-center py-2 rounded-lg px-3 -mx-3" style="background: rgba(95, 252, 192, 0.1);">
                             <span class="font-medium">Profit per lead</span>
-                            <span class="font-bold text-xl" style="color: #5FFCC0;">$1,000</span>
+                            <span class="font-bold text-xl" style="color: #5FFCC0;">$250</span>
                         </div>
                     </div>
                 </div>
@@ -541,7 +541,7 @@
                         </div>
                         <div class="flex justify-between items-center py-2 border-b border-border/50">
                             <span class="text-muted-foreground">Gross profit</span>
-                            <span class="font-semibold">$60,000</span>
+                            <span class="font-semibold">$15,000</span>
                         </div>
                         <div class="flex justify-between items-center py-2 border-b border-border/50">
                             <span class="text-muted-foreground">Ad spend (@ $125 CPL)</span>
@@ -553,14 +553,141 @@
                         </div>
                         <div class="flex justify-between items-center py-2 rounded-lg px-3 -mx-3" style="background: rgba(95, 252, 192, 0.15);">
                             <span class="font-semibold">Net profit/month</span>
-                            <span class="font-bold text-2xl" style="color: #5FFCC0;">$48,851</span>
+                            <span class="font-bold text-2xl" style="color: #5FFCC0;">$3,851</span>
                         </div>
                     </div>
                 </div>
-                <div class="text-center pt-4 border-t border-border/50">
-                    <p class="text-sm text-muted-foreground">Upfront investment paid back in</p>
-                    <p class="text-3xl font-bold mt-1" style="color: #5FFCC0;">~17 days</p>
-                    <p class="text-xs text-muted-foreground mt-1">of leads flowing</p>
+            </div>
+        </div>
+
+        <!-- ========== INVESTMENT vs PROFIT TIMELINE ========== -->
+        <div class="mt-8 rounded-xl border border-border overflow-hidden" style="background: hsl(210 15% 8%);">
+            <div class="py-4 border-b border-border">
+                <h3 class="font-semibold text-center text-lg">Investment vs. Profit Over Time</h3>
+                <p class="text-xs text-muted-foreground text-center mt-1">Month-by-month breakdown showing your path to ROI</p>
+            </div>
+            <div class="p-4 sm:p-6">
+                <!-- Header Row -->
+                <div class="grid grid-cols-4 gap-2 text-xs uppercase tracking-wide text-muted-foreground pb-3 border-b border-border/50 mb-1">
+                    <span>Month</span>
+                    <span class="text-right">Costs</span>
+                    <span class="text-right">Revenue</span>
+                    <span class="text-right">Cumulative</span>
+                </div>
+
+                <!-- Month 0 -->
+                <div class="grid grid-cols-4 gap-2 py-3 border-b border-border/30 text-sm">
+                    <span class="font-medium">Kickoff</span>
+                    <span class="text-right text-red-400">-$27,995</span>
+                    <span class="text-right text-muted-foreground">—</span>
+                    <span class="text-right font-semibold text-red-400">-$27,995</span>
+                </div>
+
+                <!-- Month 1 -->
+                <div class="grid grid-cols-4 gap-2 py-3 border-b border-border/30 text-sm">
+                    <div>
+                        <span class="font-medium">Month 1</span>
+                        <p class="text-xs text-muted-foreground">Learning</p>
+                    </div>
+                    <span class="text-right text-red-400">-$8,649</span>
+                    <span class="text-right" style="color: #5FFCC0;">+$10,000</span>
+                    <span class="text-right font-semibold text-red-400">-$26,644</span>
+                </div>
+
+                <!-- Month 2 -->
+                <div class="grid grid-cols-4 gap-2 py-3 border-b border-border/30 text-sm">
+                    <div>
+                        <span class="font-medium">Month 2</span>
+                        <p class="text-xs text-muted-foreground">Optimizing</p>
+                    </div>
+                    <span class="text-right text-red-400">-$11,149</span>
+                    <span class="text-right" style="color: #5FFCC0;">+$15,000</span>
+                    <span class="text-right font-semibold text-red-400">-$22,793</span>
+                </div>
+
+                <!-- Month 3 -->
+                <div class="grid grid-cols-4 gap-2 py-3 border-b border-border/30 text-sm">
+                    <span class="font-medium">Month 3</span>
+                    <span class="text-right text-red-400">-$11,149</span>
+                    <span class="text-right" style="color: #5FFCC0;">+$15,000</span>
+                    <span class="text-right font-semibold text-red-400">-$18,942</span>
+                </div>
+
+                <!-- Month 4 -->
+                <div class="grid grid-cols-4 gap-2 py-3 border-b border-border/30 text-sm">
+                    <span class="font-medium">Month 4</span>
+                    <span class="text-right text-red-400">-$11,149</span>
+                    <span class="text-right" style="color: #5FFCC0;">+$15,000</span>
+                    <span class="text-right font-semibold text-red-400">-$15,091</span>
+                </div>
+
+                <!-- Month 5 -->
+                <div class="grid grid-cols-4 gap-2 py-3 border-b border-border/30 text-sm">
+                    <span class="font-medium">Month 5</span>
+                    <span class="text-right text-red-400">-$11,149</span>
+                    <span class="text-right" style="color: #5FFCC0;">+$15,000</span>
+                    <span class="text-right font-semibold text-red-400">-$11,240</span>
+                </div>
+
+                <!-- Month 6 -->
+                <div class="grid grid-cols-4 gap-2 py-3 border-b border-border/30 text-sm">
+                    <span class="font-medium">Month 6</span>
+                    <span class="text-right text-red-400">-$11,149</span>
+                    <span class="text-right" style="color: #5FFCC0;">+$15,000</span>
+                    <span class="text-right font-semibold text-red-400">-$7,389</span>
+                </div>
+
+                <!-- Month 7 -->
+                <div class="grid grid-cols-4 gap-2 py-3 border-b border-border/30 text-sm">
+                    <span class="font-medium">Month 7</span>
+                    <span class="text-right text-red-400">-$11,149</span>
+                    <span class="text-right" style="color: #5FFCC0;">+$15,000</span>
+                    <span class="text-right font-semibold text-red-400">-$3,538</span>
+                </div>
+
+                <!-- Month 8 - BREAKEVEN -->
+                <div class="grid grid-cols-4 gap-2 py-3 rounded-lg px-2 -mx-2 text-sm" style="background: rgba(95, 252, 192, 0.1); border: 1px solid rgba(95, 252, 192, 0.3);">
+                    <div>
+                        <span class="font-semibold" style="color: #5FFCC0;">Month 8</span>
+                        <p class="text-xs" style="color: #5FFCC0;">BREAKEVEN</p>
+                    </div>
+                    <span class="text-right text-red-400">-$11,149</span>
+                    <span class="text-right" style="color: #5FFCC0;">+$15,000</span>
+                    <span class="text-right font-bold text-lg" style="color: #5FFCC0;">+$313</span>
+                </div>
+
+                <!-- Months 9-12 summary -->
+                <div class="grid grid-cols-4 gap-2 py-3 mt-1 text-sm">
+                    <span class="font-medium">Month 9-12</span>
+                    <span class="text-right text-muted-foreground">+$3,851/mo</span>
+                    <span class="text-right text-muted-foreground">net profit</span>
+                    <span class="text-right font-semibold" style="color: #5FFCC0;">+$15,717</span>
+                </div>
+
+                <!-- Visual Progress Bar -->
+                <div class="mt-6 pt-4 border-t border-border/50">
+                    <div class="flex justify-between text-xs text-muted-foreground mb-2">
+                        <span>Kickoff</span>
+                        <span style="color: #5FFCC0;">Breakeven (Month 8)</span>
+                        <span>Month 12</span>
+                    </div>
+                    <div class="relative h-3 rounded-full overflow-hidden" style="background: hsl(240 3.7% 15.9%);">
+                        <div class="absolute left-0 top-0 h-full rounded-full" style="width: 67%; background: linear-gradient(90deg, #ef4444 0%, #f59e0b 60%, #5FFCC0 100%);"></div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 mt-4 text-center">
+                        <div>
+                            <p class="text-xs text-muted-foreground">Total invested</p>
+                            <p class="font-semibold text-red-400">$150,383</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-muted-foreground">Total revenue</p>
+                            <p class="font-semibold" style="color: #5FFCC0;">$175,000</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-muted-foreground">Year 1 net</p>
+                            <p class="font-bold text-lg" style="color: #5FFCC0;">+$15,717</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
