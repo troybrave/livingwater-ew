@@ -577,7 +577,7 @@
                                 </div>
                                 <div class="pt-2 border-t border-border/30">
                                     <p class="text-lg font-semibold" style="color: #5FFCC0;" id="roi-m1-net">$9,101</p>
-                                    <p class="text-xs text-muted-foreground">net profit</p>
+                                    <p class="text-xs text-muted-foreground">net to date</p>
                                 </div>
                             </div>
                         </div>
@@ -594,7 +594,7 @@
                                 </div>
                                 <div class="pt-2 border-t border-border/30">
                                     <p class="text-lg font-semibold" style="color: #5FFCC0;" id="roi-m6-net">$21,996</p>
-                                    <p class="text-xs text-muted-foreground">net profit</p>
+                                    <p class="text-xs text-muted-foreground">net to date</p>
                                 </div>
                             </div>
                         </div>
@@ -611,17 +611,13 @@
                                 </div>
                                 <div class="pt-2 border-t border-border/30">
                                     <p class="text-lg font-bold" style="color: #5FFCC0;" id="roi-m12-net">$55,672</p>
-                                    <p class="text-xs text-muted-foreground">net profit</p>
+                                    <p class="text-xs text-muted-foreground">net to date</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Disclaimer -->
-                <div class="pt-4 border-t border-border/30">
-                    <p class="text-xs text-muted-foreground leading-relaxed">* <span class="font-medium text-foreground/70">Marketing ROI only.</span> Projections reflect the direct relationship between advertising spend and sales volume based on $4,000 profit per sold unit ($4,750 blended with install at 75%). Does not account for operational scaling costs such as additional labor, vehicles, inventory, facilities, or overhead that may be required at higher volumes.</p>
-                </div>
             </div>
         </div>
 
@@ -730,7 +726,7 @@
                         <p class="font-bold text-lg" style="color: #5FFCC0;" id="chart-year-net">+$298,005</p>
                     </div>
                 </div>
-                <p class="text-xs text-muted-foreground mt-4 leading-relaxed">* Marketing ROI only. Does not include operational scaling costs (labor, vehicles, inventory, facilities, overhead). Based on $4,000 profit per unit / $4,750 blended with install.</p>
+                <p class="text-xs text-muted-foreground mt-4 leading-relaxed">* <span class="font-medium text-foreground/70">Marketing ROI only.</span> Projections reflect the direct relationship between advertising spend and sales volume based on $4,000 profit per sold unit ($4,750 blended with install at 75%). Does not account for operational scaling costs such as additional labor, vehicles, inventory, facilities, or overhead that may be required at higher volumes.</p>
             </div>
         </div>
 
@@ -743,7 +739,7 @@
 
             function gx(m) { return X0 + (m / 12) * (X1 - X0); }
             function gy(v) { return Y0 - (v / YMAX) * (Y0 - Y1); }
-            function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+            function fmt(n) { var r = Math.round(n); return (r < 0 ? '-$' : '$') + Math.abs(r).toLocaleString(); }
             function fmtK(n) { return '$' + Math.round(n / 1000) + 'K'; }
 
             window.setScenario = function(key) {
@@ -794,13 +790,19 @@
                     md.push({ s: Math.round(sales), net: rev - cost, cumC: cumC, cumR: cumR });
                 }
 
-                // Update trajectory cards
+                // Update trajectory cards (cumulative net = total revenue - total costs to date)
+                function setNet(id, cumR, cumC) {
+                    var net = cumR - cumC;
+                    var el = document.getElementById(id);
+                    el.textContent = (net >= 0 ? '+' : '') + fmt(net);
+                    el.style.color = net >= 0 ? '#5FFCC0' : '#ef4444';
+                }
                 document.getElementById('roi-m1-sales').textContent = md[0].s;
-                document.getElementById('roi-m1-net').textContent = fmt(md[0].net);
+                setNet('roi-m1-net', md[0].cumR, md[0].cumC);
                 document.getElementById('roi-m6-sales').textContent = md[5].s;
-                document.getElementById('roi-m6-net').textContent = fmt(md[5].net);
+                setNet('roi-m6-net', md[5].cumR, md[5].cumC);
                 document.getElementById('roi-m12-sales').textContent = md[11].s;
-                document.getElementById('roi-m12-net').textContent = fmt(md[11].net);
+                setNet('roi-m12-net', md[11].cumR, md[11].cumC);
 
                 // Build chart polyline strings
                 var cl = cp.map(function(p){ return Math.round(p[0]) + ',' + Math.round(p[1]); }).join(' ');
