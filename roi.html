@@ -501,81 +501,116 @@
             </div>
         </div>
 
-        <!-- ========== THE ROI MATH ========== -->
-        <div class="mt-12 rounded-xl border-2 border-[#5FFCC0]/30 overflow-hidden" style="background: linear-gradient(135deg, rgba(95, 252, 192, 0.1) 0%, rgba(56, 154, 191, 0.1) 100%);">
-            <div class="py-4 border-b border-[#5FFCC0]/20">
-                <h3 class="font-semibold text-center text-lg" style="color: #5FFCC0;">The ROI Math</h3>
+        <!-- ========== THE MARKETING ROI ========== -->
+        <div class="mt-12 rounded-xl border-2 border-[#5FFCC0]/30 overflow-hidden" style="background: linear-gradient(135deg, rgba(95, 252, 192, 0.08) 0%, rgba(56, 154, 191, 0.08) 100%);">
+            <div class="py-4 border-b border-[#5FFCC0]/20 text-center">
+                <h3 class="font-semibold text-lg" style="color: #5FFCC0;">The Marketing ROI *</h3>
+                <p class="text-xs text-muted-foreground mt-1">Ad spend → leads → sales → profit</p>
             </div>
-            <div class="p-6 space-y-6">
+            <div class="p-6 space-y-8">
+
+                <!-- Per-Sale Economics -->
                 <div>
-                    <p class="text-xs uppercase tracking-wide text-muted-foreground mb-3">Unit Economics</p>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center py-2 border-b border-border/50">
-                            <span class="text-muted-foreground">Profit per system sold</span>
-                            <span class="font-semibold text-lg">$4,000</span>
+                    <p class="text-xs uppercase tracking-wide text-muted-foreground mb-3">Per-Sale Economics</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="rounded-lg p-4 text-center" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+                            <p class="text-2xl font-bold">$4,000</p>
+                            <p class="text-xs text-muted-foreground mt-1">Profit per system</p>
                         </div>
-                        <div class="flex justify-between items-center py-2 border-b border-border/50">
-                            <span class="text-muted-foreground">Install profit (75% of sales)</span>
-                            <span class="font-semibold">+$1,000</span>
+                        <div class="rounded-lg p-4 text-center" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+                            <p class="text-2xl font-bold">+$1,000</p>
+                            <p class="text-xs text-muted-foreground mt-1">Install profit (75% of sales)</p>
                         </div>
-                        <div class="flex justify-between items-center py-2 border-b border-border/50">
-                            <span class="text-muted-foreground">Blended profit per sale</span>
-                            <span class="font-semibold text-lg">$4,750</span>
+                    </div>
+                    <div class="mt-3 rounded-lg p-4 text-center" style="background: rgba(95, 252, 192, 0.08); border: 1px solid rgba(95, 252, 192, 0.15);">
+                        <p class="text-xs text-muted-foreground">Blended profit per closed deal</p>
+                        <p class="text-3xl font-bold mt-1" style="color: #5FFCC0;">$4,750</p>
+                    </div>
+                </div>
+
+                <!-- What Every Lead Is Worth - Visual Flow -->
+                <div>
+                    <p class="text-xs uppercase tracking-wide text-muted-foreground mb-3">What Every Lead Is Worth</p>
+                    <div class="flex items-center justify-center gap-2 sm:gap-3 py-2">
+                        <div class="rounded-lg px-3 sm:px-4 py-3 text-center" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2);">
+                            <p class="text-lg font-semibold text-red-400">$125</p>
+                            <p class="text-xs text-muted-foreground">cost/lead</p>
                         </div>
-                        <div class="flex justify-between items-center py-2 border-b border-border/50">
-                            <span class="text-muted-foreground">Industry close rate</span>
-                            <span class="font-semibold">25%</span>
+                        <svg class="w-4 h-4 flex-shrink-0 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <div class="rounded-lg px-3 sm:px-4 py-3 text-center" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+                            <p class="text-lg font-semibold">25%</p>
+                            <p class="text-xs text-muted-foreground">close rate</p>
                         </div>
-                        <div class="flex justify-between items-center py-2 border-b border-border/50">
-                            <span class="text-muted-foreground">Leads needed per sale</span>
-                            <span class="font-semibold">4 leads</span>
+                        <svg class="w-4 h-4 flex-shrink-0 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <div class="rounded-lg px-3 sm:px-4 py-3 text-center" style="background: rgba(95, 252, 192, 0.1); border: 1px solid rgba(95, 252, 192, 0.2);">
+                            <p class="text-lg font-semibold" style="color: #5FFCC0;">$1,188</p>
+                            <p class="text-xs text-muted-foreground">return/lead</p>
                         </div>
-                        <div class="flex justify-between items-center py-2 rounded-lg px-3 -mx-3" style="background: rgba(95, 252, 192, 0.1);">
-                            <span class="font-medium">Profit per lead</span>
-                            <span class="font-bold text-xl" style="color: #5FFCC0;">$1,188</span>
+                    </div>
+                    <p class="text-sm text-muted-foreground text-center mt-2">Every $125 invested in a lead returns <span class="font-semibold" style="color: #5FFCC0;">$1,188</span> — a <span class="font-semibold" style="color: #5FFCC0;">9.5x return</span></p>
+                </div>
+
+                <!-- 12-Month Growth Trajectory -->
+                <div>
+                    <p class="text-xs uppercase tracking-wide text-muted-foreground mb-3">12-Month Growth Trajectory (15% MoM)</p>
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="rounded-lg p-4" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+                            <p class="text-xs font-medium text-muted-foreground mb-3 uppercase tracking-wide">Month 1</p>
+                            <div class="space-y-2">
+                                <div>
+                                    <p class="text-xl font-semibold">12</p>
+                                    <p class="text-xs text-muted-foreground">leads</p>
+                                </div>
+                                <div>
+                                    <p class="text-lg font-semibold">3</p>
+                                    <p class="text-xs text-muted-foreground">sales</p>
+                                </div>
+                                <div class="pt-2 border-t border-border/30">
+                                    <p class="text-lg font-semibold" style="color: #5FFCC0;">$9,101</p>
+                                    <p class="text-xs text-muted-foreground">net profit</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-lg p-4" style="background: rgba(95, 252, 192, 0.04); border: 1px solid rgba(95, 252, 192, 0.1);">
+                            <p class="text-xs font-medium text-muted-foreground mb-3 uppercase tracking-wide">Month 6</p>
+                            <div class="space-y-2">
+                                <div>
+                                    <p class="text-xl font-semibold">24</p>
+                                    <p class="text-xs text-muted-foreground">leads</p>
+                                </div>
+                                <div>
+                                    <p class="text-lg font-semibold">6</p>
+                                    <p class="text-xs text-muted-foreground">sales</p>
+                                </div>
+                                <div class="pt-2 border-t border-border/30">
+                                    <p class="text-lg font-semibold" style="color: #5FFCC0;">$21,996</p>
+                                    <p class="text-xs text-muted-foreground">net profit</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-lg p-4" style="background: rgba(95, 252, 192, 0.08); border: 1px solid rgba(95, 252, 192, 0.2);">
+                            <p class="text-xs font-medium text-muted-foreground mb-3 uppercase tracking-wide">Month 12</p>
+                            <div class="space-y-2">
+                                <div>
+                                    <p class="text-xl font-semibold">56</p>
+                                    <p class="text-xs text-muted-foreground">leads</p>
+                                </div>
+                                <div>
+                                    <p class="text-lg font-semibold">14</p>
+                                    <p class="text-xs text-muted-foreground">sales</p>
+                                </div>
+                                <div class="pt-2 border-t border-border/30">
+                                    <p class="text-lg font-bold" style="color: #5FFCC0;">$55,672</p>
+                                    <p class="text-xs text-muted-foreground">net profit</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <p class="text-xs uppercase tracking-wide text-muted-foreground mb-3">Growth Model (15% month-over-month)</p>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center py-2 border-b border-border/50">
-                            <span class="text-muted-foreground">Month 1 leads</span>
-                            <span class="font-semibold">12 leads</span>
-                        </div>
-                        <div class="flex justify-between items-center py-2 border-b border-border/50">
-                            <span class="text-muted-foreground">Monthly growth rate</span>
-                            <span class="font-semibold">+15%</span>
-                        </div>
-                        <div class="flex justify-between items-center py-2 border-b border-border/50">
-                            <span class="text-muted-foreground">Month 6 leads</span>
-                            <span class="font-semibold">24 leads</span>
-                        </div>
-                        <div class="flex justify-between items-center py-2 border-b border-border/50">
-                            <span class="text-muted-foreground">Month 12 leads</span>
-                            <span class="font-semibold">56 leads</span>
-                        </div>
-                        <div class="flex justify-between items-center py-2 border-b border-border/50">
-                            <span class="text-muted-foreground">Month 12 sales (@ 25%)</span>
-                            <span class="font-semibold">14 systems</span>
-                        </div>
-                        <div class="flex justify-between items-center py-2 border-b border-border/50">
-                            <span class="text-muted-foreground">Month 12 gross profit</span>
-                            <span class="font-semibold">$66,301</span>
-                        </div>
-                        <div class="flex justify-between items-center py-2 border-b border-border/50">
-                            <span class="text-muted-foreground">Month 12 ad spend (@ $125 CPL)</span>
-                            <span class="font-semibold text-red-400">-$6,980</span>
-                        </div>
-                        <div class="flex justify-between items-center py-2 border-b border-border/50">
-                            <span class="text-muted-foreground">Agency fee</span>
-                            <span class="font-semibold text-red-400">-$3,649</span>
-                        </div>
-                        <div class="flex justify-between items-center py-2 rounded-lg px-3 -mx-3" style="background: rgba(95, 252, 192, 0.15);">
-                            <span class="font-semibold">Month 12 net profit</span>
-                            <span class="font-bold text-2xl" style="color: #5FFCC0;">$55,672</span>
-                        </div>
-                    </div>
+
+                <!-- Disclaimer -->
+                <div class="pt-4 border-t border-border/30">
+                    <p class="text-xs text-muted-foreground leading-relaxed">* <span class="font-medium text-foreground/70">Marketing ROI only.</span> Projections reflect the direct relationship between advertising spend and sales volume based on $4,000 profit per sold unit ($4,750 blended with install at 75%). Does not account for operational scaling costs such as additional labor, vehicles, inventory, facilities, or overhead that may be required at higher volumes.</p>
                 </div>
             </div>
         </div>
@@ -583,19 +618,19 @@
         <!-- ========== INVESTMENT vs PROFIT LINE GRAPH ========== -->
         <div class="mt-8 rounded-xl border border-border overflow-hidden" style="background: hsl(210 15% 8%);">
             <div class="py-4 border-b border-border">
-                <h3 class="font-semibold text-center text-lg">Investment vs. Profit Over 12 Months</h3>
-                <p class="text-xs text-muted-foreground text-center mt-1">Cumulative costs vs. cumulative revenue</p>
+                <h3 class="font-semibold text-center text-lg">Marketing Spend vs. Sales Revenue *</h3>
+                <p class="text-xs text-muted-foreground text-center mt-1">Cumulative ad spend + agency fees vs. gross sales revenue</p>
             </div>
             <div class="p-4 sm:p-6">
                 <!-- Legend -->
                 <div class="flex justify-center gap-6 mb-4">
                     <div class="flex items-center gap-2 text-sm">
                         <span class="w-4 h-0.5 inline-block rounded" style="background: #ef4444;"></span>
-                        <span class="text-muted-foreground">Total Investment</span>
+                        <span class="text-muted-foreground">Marketing Costs</span>
                     </div>
                     <div class="flex items-center gap-2 text-sm">
                         <span class="w-4 h-0.5 inline-block rounded" style="background: #5FFCC0;"></span>
-                        <span class="text-muted-foreground">Total Revenue</span>
+                        <span class="text-muted-foreground">Sales Revenue</span>
                     </div>
                 </div>
 
@@ -672,18 +707,19 @@
                 <!-- Summary stats below chart -->
                 <div class="grid grid-cols-3 gap-4 mt-4 pt-4 border-t border-border/50 text-center">
                     <div>
-                        <p class="text-xs text-muted-foreground">Year 1 total costs</p>
+                        <p class="text-xs text-muted-foreground">Year 1 marketing costs</p>
                         <p class="font-semibold text-red-400">$115,294</p>
                     </div>
                     <div>
-                        <p class="text-xs text-muted-foreground">Year 1 total revenue</p>
+                        <p class="text-xs text-muted-foreground">Year 1 sales revenue</p>
                         <p class="font-semibold" style="color: #5FFCC0;">$413,296</p>
                     </div>
                     <div>
-                        <p class="text-xs text-muted-foreground">Year 1 net profit</p>
+                        <p class="text-xs text-muted-foreground">Year 1 marketing profit *</p>
                         <p class="font-bold text-lg" style="color: #5FFCC0;">+$298,002</p>
                     </div>
                 </div>
+                <p class="text-xs text-muted-foreground mt-4 leading-relaxed">* Marketing ROI only. Does not include operational scaling costs (labor, vehicles, inventory, facilities, overhead). Based on $4,000 profit per unit / $4,750 blended with install.</p>
             </div>
         </div>
 
